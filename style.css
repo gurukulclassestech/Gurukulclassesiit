@@ -44,7 +44,7 @@ html, body {
   align-content: stretch;
   margin-left: 66px;
   justify-content: flex-end;
-  gap: 25px;
+  letter-spacing: -0.5px;
 }
 
 
@@ -1617,6 +1617,7 @@ body{
     display: flex;
    }
   }
+
 
 
 
