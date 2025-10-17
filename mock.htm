@@ -44,7 +44,7 @@
                    <li class="dropdown">
                     <a href="#" class="dropbtn">Class Test +</a>
                          <ul class="dropdown-content">
-                      
+                         <a href="#" class="dropbtn">Mock Test +</a>
                           <li><a href="mock.htm">11th JEE / NEET Mock Test</a></li>
                           <li><a href="12mook.htm">12th JEE / NEET Mock Test</a></li>
                         
@@ -79,95 +79,116 @@
             </div>
             </div>
 
- <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #f0f8ff, #ffffff);
-      font-family: "Poppins", sans-serif;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #f0f8ff, #ffffff);
+  }
 
+  /* --- Button Section --- */
+  .button-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  .button-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    width: 90%;
+    max-width: 1000px;
+  }
+
+  .outline {
+    --c: #0b76ff;
+    background: transparent;
+    color: var(--c);
+    border: 2px solid rgba(11, 118, 255, 0.3);
+    padding: 0.8rem 1.4rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 6px 14px rgba(11, 118, 255, 0.1);
+    width: 100%;
+    text-align: center;
+  }
+
+  .outline:hover {
+    background: rgba(11, 118, 255, 0.08);
+    transform: translateY(-3px);
+    border-color: var(--c);
+    box-shadow: 0 10px 24px rgba(11, 118, 255, 0.2);
+  }
+
+  .outline:focus {
+    outline: none;
+    box-shadow: 0 0 0 5px rgba(11, 118, 255, 0.15);
+  }
+
+  /* --- Responsive Breakpoints --- */
+  @media (max-width: 992px) {
     .button-container {
-      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 20px;
-      width: 90%;
-      margin-top: 25px;
-      margin-left: 213px;
-      max-width: 1000px;
-      justify-items: center;
+      margin-top: 90px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .button-section {
+      padding: 40px 10px;
     }
 
     .outline {
-      --c: #0b76ff;
-      background: transparent;
-      color: var(--c);
-      border: 2px solid rgba(11, 118, 255, 0.3);
-      padding: 0.8rem 1.6rem;
-      margin-top: 25px; 
-      margin-left: 75px;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      box-shadow: 0 6px 14px rgba(11, 118, 255, 0.1);
+      font-size: 0.95rem;
+      padding: 0.7rem 1rem;
+      border-radius: 10px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .button-container {
+      grid-template-columns: 1fr;
+    }
+    .outline {
+      font-size: 0.9rem;
       width: 100%;
-      text-align: center;
     }
-
-    .outline:hover {
-      background: rgba(11, 118, 255, 0.08);
-      transform: translateY(-3px);
-      border-color: var(--c);
-      box-shadow: 0 10px 24px rgba(11, 118, 255, 0.2);
-    }
-
-    .outline:focus {
-      outline: none;
-      box-shadow: 0 0 0 5px rgba(11, 118, 255, 0.15);
-    }
-
-    @media (max-width: 600px) {
-      .outline {
-        font-size: 0.95rem;
-        padding: 0.7rem 1.2rem;
-      }
-    }
-
-    @media (max-width: 400px) {
-      .outline {
-        font-size: 0.9rem;
-        width: 90%;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
+
 <body>
-  <div class="button-container">
-      <button class="outline" onclick="location.href='page1.html'">11th JEE Main Test 1</button>
-    <button class="outline" onclick="location.href='page2.html'">11th JEE Main Test 2</button>
-    <button class="outline" onclick="location.href='page3.html'">11th JEE Main Test 3</button>
-    <button class="outline" onclick="location.href='page4.html'">11th JEE Main Test 4</button>
-    <button class="outline" onclick="location.href='page5.html'">11th JEE Main Test 5</button>
-    <button class="outline" onclick="location.href='page6.html'">11th JEE ADVANCED 1</button>
-    <button class="outline" onclick="location.href='page7.html'">11th JEE ADVANCED 2</button>
-    <button class="outline" onclick="location.href='page8.html'">11th JEE ADVANCED 3</button>
-    <button class="outline" onclick="location.href='page9.html'">11th JEE ADVANCED 4</button>
-    <button class="outline" onclick="location.href='page11.html'">11th NEET 1</button>
-    <button class="outline" onclick="location.href='page12.html'">11th NEET 2</button>
-    <button class="outline" onclick="location.href='page13.html'">11th NEET 3</button>
-    <button class="outline" onclick="location.href='page14.html'">11th NEET 4</button>
-    <button class="outline" onclick="location.href='page15.html'">11th NEET 5</button>
-    <button class="outline" onclick="location.href='page16.html'">11th NEET 6</button>
-    <button class="outline" onclick="location.href='page17.html'">11th NEET 7</button>
-    <button class="outline" onclick="location.href='page18.html'">11th NEET 8</button>
+
   
-  </div>
+
+  <!-- ✅ Button Section -->
+  <section class="button-section">
+    <div class="button-container">
+      <button class="outline" onclick="location.href='page1.html'">11th JEE Main Test 1</button>
+      <button class="outline" onclick="location.href='page2.html'">11th JEE Main Test 2</button>
+      <button class="outline" onclick="location.href='page3.html'">11th JEE Main Test 3</button>
+      <button class="outline" onclick="location.href='page4.html'">11th JEE Main Test 4</button>
+      <button class="outline" onclick="location.href='page5.html'">11th JEE Main Test 5</button>
+      <button class="outline" onclick="location.href='page6.html'">11th JEE Advanced 1</button>
+      <button class="outline" onclick="location.href='page7.html'">11th JEE Advanced 2</button>
+      <button class="outline" onclick="location.href='page8.html'">11th JEE Advanced 3</button>
+      <button class="outline" onclick="location.href='page9.html'">11th JEE Advanced 4</button>
+      <button class="outline" onclick="location.href='page10.html'">11th NEET 1</button>
+      <button class="outline" onclick="location.href='page11.html'">11th NEET 2</button>
+      <button class="outline" onclick="location.href='page12.html'">11th NEET 3</button>
+      <button class="outline" onclick="location.href='page13.html'">11th NEET 4</button>
+      <button class="outline" onclick="location.href='page14.html'">11th NEET 5</button>
+      <button class="outline" onclick="location.href='page15.html'">11th NEET 6</button>
+    </div>
+  </section>
 </body>
 </html>
-
