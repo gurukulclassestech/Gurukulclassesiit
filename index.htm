@@ -194,53 +194,84 @@
     </div>
   </section>
 
-  <!-- Main hero / slideshow -->
-  <div class="slideshow-container">
-    <div class="mySlides fade">
-      <div class="numbertext"></div>
-      <img src="Your paragraph text (2).png" style="width:100%;" alt="Gurukul slide">
-    </div>
-    <div class="mySlides fade">
-      <div class="numbertext"></div>
-      <img src="Your paragraph text.png" style="width:100%;" alt="Gurukul slide">
-    </div>
-    <div class="mySlides fade">
-      <div class="numbertext"></div>
-      <img src="Untitled (20 x 29 in) (25 x 35 in) (1366 x 768 px).png" style="width:100%;" alt="Gurukul slide">
-    </div>
-    <div class="mySlides fade">
-      <div class="numbertext"></div>
-      <img src="Best Employee (1080 x 768 px).png" style="width:100%;" alt="Gurukul faculty">
-    </div>
-    <div class="mySlides fade">
-      <div class="numbertext"></div>
-      <img src="1.jpeg" style="width:50%;" alt="Gurukul classroom 1">
-    </div>
-    <div class="mySlides fade">
-      <div class="numbertext"></div>
-      <img src="2.jpeg" style="width:50%;" alt="Gurukul classroom 2">
-    </div>
-    <div class="mySlides fade">
-      <div class="numbertext"></div>
-      <img src="3.jpeg" style="width:50%;" alt="Gurukul classroom 3">
-    </div>
-    <div class="mySlides fade">
-      <div class="numbertext"></div>
-      <img src="4.jpeg" style="width:50%;" alt="Gurukul classroom 4">
-    </div>
-    <div class="mySlides fade">
-      <div class="numbertext"></div>
-      <img src="Your paragraph text (1).png" style="width:100%;" alt="Gurukul slide">
-    </div>
+          <div class="slideshow-container">
+              <div class="mySlides fade">
+                <div class="numbertext"></div>
+                <img src="Your paragraph text (2).png" style="width: 100%;">
+              </div>
+              <div class="mySlides fade">
+                <div class="numbertext"></div>
+                <img src="Your paragraph text.png" style="width: 100%;">
+              </div>
+              
+              <div class="mySlides fade">
+                <div class="numbertext"></div>
+                <img src="Untitled (20 x 29 in) (25 x 35 in) (1366 x 768 px).png" style="width: 100%;">
+              </div>
+              
+              
+              <div class="mySlides fade">
+                <div class="numbertext"></div>
+                <img src="Best Employee (1080 x 768 px).png" style="width: 100%;">
+              </div>
 
-    <div style="text-align:center">
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-      <span class="dot"></span>
-      <span class="dot"></span>  
-    </div>
+           
+              <div class="mySlides fade">
+                <div class="numbertext"></div>
+                <img src="1.jpeg" style="width: 50%;">
+              </div>
+              <div class="mySlides fade">
+                <div class="numbertext"></div>
+                <img src="2.jpeg" style="width: 50%;">
+              </div>
+              <div class="mySlides fade">
+                <div class="numbertext"></div>
+                <img src="3.jpeg" style="width: 50%;">
+              </div>
+              <div class="mySlides fade">
+                <div class="numbertext"></div>
+                <img src="4.jpeg" style="width: 50%;">
+              </div>
+             
+              <div class="mySlides fade">
+                <div class="numbertext"></div>
+                <img src="Your paragraph text (1).png" style="width: 100%;">
+              </div>
+
+              <div style="text-align:center">
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span>
+                <span class="dot"></span>  
+              </div>
+              
+              <script>
+let slideIndex = 0;
+
+function showSlides() {
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slideIndex++;
+  if (slideIndex > slides.length) slideIndex = 1;
+
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+}
+
+// Start automatic slideshow
+showSlides();
+setInterval(showSlides, 2000);
 
   </div>
 
@@ -593,3 +624,4 @@
 
 </body>
 </html>
+
