@@ -219,60 +219,95 @@
             </div>
             </div>
             </div>
-            <div class="slideshow-container">
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="Your paragraph text (2).png" style="width: 100%;">
-              </div>
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="Your paragraph text.png" style="width: 100%;">
-              </div>
-              
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="Untitled (20 x 29 in) (25 x 35 in) (1366 x 768 px).png" style="width: 100%;">
-              </div>
-              
-              
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="Best Employee (1080 x 768 px).png" style="width: 100%;">
-              </div>
+          <style>
+/* Slideshow button styling */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 12px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background: rgba(0,0,0,0.5);
+}
 
-           
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="1.jpeg" style="width: 50%;">
-              </div>
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="2.jpeg" style="width: 50%;">
-              </div>
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="3.jpeg" style="width: 50%;">
-              </div>
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="4.jpeg" style="width: 50%;">
-              </div>
-             
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="Your paragraph text (1).png" style="width: 100%;">
-              </div>
+/* Position of Next button */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
 
-              <div style="text-align:center">
-                <span class="dot"></span> 
-                <span class="dot"></span> 
-                <span class="dot"></span> 
-                <span class="dot"></span> 
-                <span class="dot"></span>
-                <span class="dot"></span>  
-              </div>
-              
-              <script>
+/* Hover effect */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+</style>
+
+
+<div class="slideshow-container">
+
+  <!-- Your slides here -->
+  <!-- (Your same slide code remains unchanged) -->
+
+  <!-- Add Prev / Next Buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+
+<br>
+
+<!-- Dots -->
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Dot controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+}
+</script>
+
 let slideIndex = 0;
 
 function showSlides() {
@@ -871,6 +906,7 @@ Giri Sirs Gurukulclasses Copyright &copy; 2025  - All rights reserved || Designe
 </div>
 
 </footer>
+
 
 
 
