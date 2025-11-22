@@ -3,409 +3,524 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gurukul Classes — Best NEET & JEE Coaching in Aurangabad</title>
-  <meta name="description" content="Gurukul Classes — Top NEET & IIT-JEE coaching in Chhatrapati Sambhajinagar (Aurangabad). Expert faculty, proven results, foundation & online classes." />
-  <meta name="keywords" content="Gurukul NEET Coaching Aurangabad, JEE Coaching Sambhajinagar, IIT JEE coaching Aurangabad" />
+  <title>Gurukul Classes — NEET & JEE Coaching | Chhatrapati Sambhajinagar</title>
+  <meta name="description" content="Gurukul Classes — Leading NEET & JEE coaching in Chhatrapati Sambhajinagar (Aurangabad). Expert faculty, foundation courses, proven results, online and classroom programs." />
+  <meta name="keywords" content="Gurukul NEET, Gurukul JEE, NEET coaching Aurangabad, JEE coaching Aurangabad, IIT coaching Sambhajinagar" />
   <link rel="canonical" href="https://www.gurukulclassesiit.co.in/" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Gurukul Classes — NEET & JEE Coaching Aurangabad" />
-  <meta property="og:description" content="Top coaching institute offering NEET & IIT-JEE programs, foundation courses, and online classes." />
+  <meta property="og:description" content="Join Gurukul Classes for top NEET & JEE preparation. Experienced faculty, regular tests, doubt support, and strategic mentoring." />
+  <meta property="og:url" content="https://www.gurukulclassesiit.co.in/" />
   <meta property="og:image" content="https://www.gurukulclassesiit.co.in/gurukul.png" />
+  <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Favicon -->
-  <link rel="icon" href="Giri Siri’s.png" type="image/png" />
+  <link rel="shortcut icon" href="gurukul-favicon.png" type="image/png">
 
-  <!-- Swiper (Slider) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <!-- Basic styles (kept in-head for single-file delivery). Move to style.css if desired. -->
   <style>
     :root{
-      --primary:#0b5ed7;
-      --accent:#ff6b6b;
-      --bg:#0f1723;
+      --accent:#0f6efd;
       --muted:#6b7280;
-      --card-bg:#ffffff;
-      --max-width:1200px;
-      font-family: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      --bg:#0b1020;
+      --card:#ffffff;
+      --radius:12px;
+      --max-width:1120px;
+      font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-    /* Reset & container */
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{background:#f6f8fb;color:#0b1220;line-height:1.5}
-    .container{max-width:var(--max-width);margin:0 auto;padding:0 16px}
-
-    /* Header / Nav */
-    header{background:linear-gradient(90deg,#0b5ed7 0%, #3b82f6 100%);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 4px 18px rgba(11,78,215,0.18)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:#f7fafc;color:#0b1220;line-height:1.45}
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:var(--max-width);margin:0 auto;padding:18px}
+    header{background:linear-gradient(90deg,#071126 0%, #06102a 100%);color:white}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:48px;width:auto;object-fit:contain}
-    .brand h1{font-size:18px;font-weight:700;letter-spacing:0.4px}
-    nav ul{display:flex;gap:14px;list-style:none;align-items:center}
-    nav a{color:#fff;text-decoration:none;padding:8px 10px;border-radius:6px;font-weight:600}
-    nav a:hover{background:rgba(255,255,255,0.08)}
-
-    /* Mobile menu */
-    .menu-toggle{display:none;background:transparent;border:none;color:#fff;font-size:22px}
+    .brand img{height:52px;width:auto;border-radius:6px}
+    .brand h1{font-size:20px;margin:0}
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{color:rgba(255,255,255,0.95);padding:6px 10px;border-radius:8px;font-weight:600}
+    .cta {background:var(--accent);color:white;padding:8px 12px;border-radius:8px;font-weight:700}
+    /* Responsive nav */
+    .nav-toggle{display:none;background:transparent;border:0;color:white;font-size:20px}
     @media (max-width:900px){
-      nav ul{display:none;position:absolute;right:16px;top:66px;background:linear-gradient(180deg,#0b5ed7,#3b82f6);padding:12px;border-radius:8px;flex-direction:column;width:220px;box-shadow:0 10px 30px rgba(11,78,215,0.2)}
-      .menu-toggle{display:inline-block}
+      nav{display:none}
+      .nav-toggle{display:block}
     }
 
     /* Hero */
-    .hero{padding:44px 0;background:linear-gradient(180deg,#f7fbff 0%, #ffffff 100%)}
-    .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
-    .hero h2{font-size:28px;color:var(--bg);margin-bottom:8px}
-    .hero p.lead{color:var(--muted);margin-bottom:16px}
-    .ctas{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700}
-    .btn-primary{background:var(--primary);color:#fff}
-    .btn-ghost{background:transparent;border:2px solid #e6eefc;color:var(--primary)}
-    .hero-card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 8px 20px rgba(6,21,34,0.06)}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:center;padding:36px 18px}
+    .hero-left h2{font-size:30px;margin:0 0 12px}
+    .hero-left p{color:var(--muted);margin:0 0 18px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:700;border:0;cursor:pointer}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-outline{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+    .hero-right{background:white;border-radius:14px;padding:12px;box-shadow:0 6px 22px rgba(10,20,40,.08)}
+    .quick-info{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+    .quick-info img{width:48px;height:48px;object-fit:cover;border-radius:8px}
 
-    /* Info rows (Courses / Facilities) */
-    .section{padding:34px 0}
-    .section h3{font-size:20px;margin-bottom:8px}
-    .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-    .card{background:#fff;border-radius:10px;padding:16px;box-shadow:0 6px 18px rgba(6,21,34,0.06)}
-    .card img{max-width:100%;height:120px;object-fit:cover;border-radius:6px;margin-bottom:12px}
+    /* Slider */
+    .slider{position:relative;border-radius:12px;overflow:hidden}
+    .slides{display:flex;transition:transform .6s ease-in-out}
+    .slide{min-width:100%;flex-shrink:0}
+    .slide img{width:100%;display:block;height:260px;object-fit:cover}
+    .slider-controls{position:absolute;inset:0;pointer-events:none}
+    .nav-btn{position:absolute;top:50%;transform:translateY(-50%);pointer-events:auto;background:rgba(0,0,0,.45);color:white;border:0;padding:10px;border-radius:8px}
+    .nav-btn.left{left:8px}
+    .nav-btn.right{right:8px}
+    .dots{display:flex;gap:8px;justify-content:center;padding:8px 0}
+    .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.6);cursor:pointer}
+    .dot.active{background:var(--accent)}
 
-    /* Results / achievements */
-    .results{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-    .badge{background:linear-gradient(90deg,#ffd54a,#ff6b6b);color:#041124;padding:14px;border-radius:10px;font-weight:700}
-
-    /* Swiper card styles */
-    .swiper{padding:12px 0}
-    .swiper .card{padding:12px}
+    /* Sections */
+    section{padding:36px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:10px;margin-bottom:18px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:white;border-radius:12px;padding:16px;box-shadow:0 6px 18px rgba(12,16,24,.06)}
+    .card h3{margin:6px 0}
+    .result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .result-item{text-align:center;padding:10px;background:linear-gradient(180deg,#fff,#fbfdff);border-radius:10px}
 
     /* Testimonials */
-    .testimonials{background:#fff;padding:24px;border-radius:10px;box-shadow:0 6px 20px rgba(6,21,34,0.04)}
-    .testimonial{padding:10px}
+    .testimonials{display:grid;grid-template-columns:1fr 380px;gap:18px;align-items:start}
+    .testimonials .list{display:flex;flex-direction:column;gap:12px}
+    .testimonial{background:white;padding:14px;border-radius:10px;box-shadow:0 6px 22px rgba(10,20,40,.05)}
+    .testimonial h4{margin:0 0 6px}
 
-    /* Contact form */
-    form{display:grid;gap:12px}
-    input,textarea,button{font-family:inherit;font-size:15px}
-    input,textarea{padding:12px;border:1px solid #e6e9ef;border-radius:8px;width:100%}
-    textarea{min-height:120px;resize:vertical}
-    .row-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    @media (max-width:720px){.hero-grid{grid-template-columns:1fr}.row-2{grid-template-columns:1fr}nav ul{right:12px}}
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px}
 
-    footer{background:#0f1723;color:#cbd5e1;padding:28px 0;margin-top:30px}
-    footer .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;align-items:start}
-    footer a{color:#cbd5e1;text-decoration:none}
-    small{color:var(--muted)}
+    /* Contact & career */
+    .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:18px}
+    .form .field{margin-bottom:10px}
+    .form input,.form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #dbe4ef}
+    footer{background:#0b1220;color:#dbe9ff;padding:28px 18px;border-top:4px solid rgba(255,255,255,0.02)}
+    footer .footer-grid{display:grid;grid-template-columns:1fr 220px;gap:18px;align-items:start}
 
-    /* small helpers */
-    .muted{color:var(--muted)}
-    .center{text-align:center}
+    /* small screens */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr; padding:22px}
+      .slider .slide img{height:200px}
+      .cards{grid-template-columns:repeat(1,1fr)}
+      .testimonials{grid-template-columns:1fr; }
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .contact-grid{grid-template-columns:1fr}
+      .result-grid{grid-template-columns:repeat(2,1fr)}
+      .topbar{flex-direction:column;align-items:flex-start;gap:8px}
+    }
+
+    /* small polish */
+    small.muted{color:var(--muted);font-size:13px}
+    .badge{display:inline-block;padding:6px 10px;background:#eef6ff;border-radius:8px}
   </style>
 
-  <!-- Structured data JSON-LD -->
+  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"EducationalOrganization",
-    "name":"Gurukul Classes",
-    "url":"https://www.gurukulclassesiit.co.in/",
-    "logo":"https://www.gurukulclassesiit.co.in/gurukul.png",
-    "sameAs":[
-      "https://www.facebook.com/gurukulclassesiit/",
-      "https://www.instagram.com/girisirsgurukulclasses/"
-    ],
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"1st Floor, Sarda Arcade, Above Canara Bank, Friends Colony, Station Road, Padampura",
-      "addressLocality":"Chhatrapati Sambhajinagar",
-      "addressRegion":"Maharashtra",
-      "postalCode":"431005",
-      "addressCountry":"IN"
-    }
+    "@graph":[
+      {
+        "@type":"EducationalOrganization",
+        "name":"Gurukul Classes",
+        "url":"https://www.gurukulclassesiit.co.in/",
+        "logo":"https://www.gurukulclassesiit.co.in/gurukul.png",
+        "sameAs":["https://www.facebook.com/gurukulclassesiit/","https://www.instagram.com/girisirsgurukulclasses/"],
+        "description":"Gurukul Classes provides NEET & JEE preparation, foundation courses and online classes in Chhatrapati Sambhajinagar (Aurangabad)."
+      },
+      {
+        "@type":"LocalBusiness",
+        "name":"Gurukul Classes",
+        "image":"https://www.gurukulclassesiit.co.in/gurukul.png",
+        "telephone":"+918668689849",
+        "address":{
+          "@type":"PostalAddress",
+          "streetAddress":"1st Floor, Sarda Arcade, Above Canara Bank, Friends Colony, Station Road, Padampura",
+          "addressLocality":"Chhatrapati Sambhajinagar",
+          "postalCode":"431005",
+          "addressRegion":"Maharashtra",
+          "addressCountry":"IN"
+        },
+        "geo":{"@type":"GeoCoordinates","latitude":19.8762,"longitude":75.3433},
+        "openingHours":"Mo-Sa 09:00-19:00"
+      }
+    ]
   }
   </script>
+
 </head>
 <body>
-
-  <!-- Header / Nav -->
   <header>
-    <div class="container nav" role="navigation" aria-label="Main navigation">
+    <div class="container topbar">
       <div class="brand">
-        <a href="/" aria-label="Gurukul home"><img src="gurukul.png" alt="Gurukul logo"></a>
+        <img src="gurukul.png" alt="Gurukul Classes logo" loading="lazy">
         <div>
-          <h1 style="font-size:15px;margin:0">Gurukul Classes</h1>
-          <small class="muted">NEET | IIT-JEE | Foundation</small>
+          <h1>Gurukul Classes</h1>
+          <small class="muted">NEET • JEE • Foundation • Online</small>
         </div>
       </div>
 
-      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" id="menuToggle">☰</button>
+      <div>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" id="navToggle">☰</button>
+        <nav id="main-nav" aria-label="Primary navigation">
+          <a href="#courses">Courses</a>
+          <a href="#results">Results</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#careers">Careers</a>
+          <a href="#contact" class="cta">Contact / Enrol</a>
+        </nav>
+      </div>
+    </div>
 
-      <nav id="site-nav">
-        <ul id="navList">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#courses">Courses</a></li>
-          <li><a href="#results">Results</a></li>
-          <li><a href="#media">Media</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+    <!-- Hero & quick info -->
+    <div class="container hero">
+      <div class="hero-left">
+        <h2>Top NEET & JEE coaching in Chhatrapati Sambhajinagar</h2>
+        <p>Experienced faculty, daily practice tests, small batches and 1:1 doubt support. Join our classroom or online programs for 11th/12th & foundation students.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Get Free Counselling</a>
+          <a class="btn btn-outline" href="#courses">View Courses</a>
+          <span class="badge">Admissions Open 2025</span>
+        </div>
+
+        <div style="margin-top:18px" aria-hidden="false">
+          <div class="quick-info">
+            <img src="campus.jpg" alt="Campus image" loading="lazy">
+            <div>
+              <strong>Classroom + Online</strong><br><small class="muted">Structured study plans & regular tests</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="slider" id="heroSlider" aria-roledescription="carousel">
+          <div class="slides" id="slidesWrap">
+            <div class="slide"><img src="slide1.jpg" alt="Gurukul banner 1" loading="lazy"></div>
+            <div class="slide"><img src="slide2.jpg" alt="Gurukul banner 2" loading="lazy"></div>
+            <div class="slide"><img src="slide3.jpg" alt="Gurukul banner 3" loading="lazy"></div>
+          </div>
+          <div class="slider-controls">
+            <button class="nav-btn left" id="prevSlide" aria-label="Previous slide">‹</button>
+            <button class="nav-btn right" id="nextSlide" aria-label="Next slide">›</button>
+          </div>
+          <div class="dots" id="sliderDots" role="tablist" aria-hidden="false"></div>
+        </div>
+
+        <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+          <div>
+            <strong>Phone</strong><br>
+            <a href="tel:+918668689849">+91 86686 89849</a>
+          </div>
+          <div style="margin-left:auto;text-align:right">
+            <small class="muted">Visit</small><br>
+            <small>1st Floor, Sarda Arcade, Padampura</small>
+          </div>
+        </div>
+      </aside>
     </div>
   </header>
 
-  <!-- HERO -->
-  <main>
-    <section class="hero container" id="home">
-      <div class="hero-grid">
-        <div>
-          <h2>Top NEET &amp; IIT-JEE Coaching in Chhatrapati Sambhajinagar</h2>
-          <p class="lead">Expert faculty, personal doubt-solving, regular tests, and a track record of excellent results. Join our Foundation, 11th/12th, or Crash courses — offline & online.</p>
-
-          <div class="ctas">
-            <a class="btn btn-primary" href="#contact">Enquire Now</a>
-            <a class="btn btn-ghost" href="#courses">View Courses</a>
-          </div>
-
-          <div style="margin-top:18px" class="muted">
-            <strong>Admissions:</strong> Seats open for 2025. Call: <a href="tel:+918668689849">+91 86686 89849</a>
-          </div>
-
-          <div style="margin-top:18px" class="section">
-            <h3>Why Gurukul?</h3>
-            <ul style="margin-top:8px;list-style:disc;padding-left:18px;color:var(--muted)">
-              <li>Experienced IITians & Doctors as faculty</li>
-              <li>Daily practice papers, weekly tests & performance tracking</li>
-              <li>Hostel facilities, disciplined environment & individual mentoring</li>
-            </ul>
-          </div>
-        </div>
-
-        <aside class="hero-card">
-          <h4 style="margin-bottom:8px">Quick Links</h4>
-          <p class="muted" style="margin-bottom:10px">Openings, Mock Tests & Admissions</p>
-          <a class="btn btn-primary" href="#" style="display:block;margin-bottom:8px">Register for G-PAT</a>
-          <a class="btn" href="#" style="display:block;background:#eef6ff;border-radius:8px">Download Prospectus</a>
-        </aside>
-      </div>
-    </section>
-
-    <!-- SLIDER (Swiper) -->
-    <section class="section container">
-      <h3 style="margin-bottom:12px">Highlights / Gallery</h3>
-      <div class="swiper" id="mainSwiper">
-        <div class="swiper-wrapper">
-          <!-- Replace image src with your real files -->
-          <div class="swiper-slide card"><img src="Your paragraph text (2).png" alt="slide 1"></div>
-          <div class="swiper-slide card"><img src="Your paragraph text.png" alt="slide 2"></div>
-          <div class="swiper-slide card"><img src="Best Employee (1080 x 768 px).png" alt="slide 3"></div>
-          <div class="swiper-slide card"><img src="1.jpeg" alt="slide 4"></div>
-          <div class="swiper-slide card"><img src="2.jpeg" alt="slide 5"></div>
-          <div class="swiper-slide card"><img src="3.jpeg" alt="slide 6"></div>
-        </div>
-
-        <!-- Controls -->
-        <div class="swiper-pagination" aria-hidden="true"></div>
-        <div class="swiper-button-prev" aria-label="Previous slide"></div>
-        <div class="swiper-button-next" aria-label="Next slide"></div>
-      </div>
-    </section>
-
+  <main class="container" role="main">
     <!-- Courses -->
-    <section id="courses" class="section container">
-      <h3>Our Programs</h3>
-      <p class="muted">Classroom & online programs for Foundation, JEE Main, JEE Advanced & NEET.</p>
-
-      <div class="grid" style="margin-top:16px">
-        <article class="card">
-          <img src="setting.png" alt="IIT-JEE">
-          <h4>JEE (Main + Advanced)</h4>
-          <p class="muted">Comprehensive syllabus coverage, advanced problem solving and mock tests.</p>
+    <section id="courses" aria-labelledby="coursesHeading">
+      <div class="section-head">
+        <h2 id="coursesHeading">Classroom & Online Courses</h2>
+        <small class="muted">Programs for 7th–12th, Foundation, NEET & JEE</small>
+      </div>
+      <div class="cards" role="list">
+        <article class="card" role="listitem">
+          <h3>JEE (Main + Advanced)</h3>
+          <small class="muted">Advanced problem-solving • Mock tests • IIT-focused curriculum</small>
+          <p style="margin-top:10px">Small batches, full syllabus coverage, and personalized mentorship.</p>
+          <p><strong>Formats:</strong> Classroom / Live online</p>
         </article>
-
-        <article class="card">
-          <img src="engineering.png" alt="JEE Main">
-          <h4>JEE (Main)</h4>
-          <p class="muted">Focused practice for JEE Main pattern with conceptual clarity.</p>
+        <article class="card" role="listitem">
+          <h3>NEET (UG)</h3>
+          <small class="muted">Concept clarity • High-yield revision • AIIMS & NEET practice</small>
+          <p style="margin-top:10px">Experienced biology & chemistry faculty with regular test series.</p>
         </article>
-
-        <article class="card">
-          <img src="doctor.png" alt="NEET">
-          <h4>NEET (UG)</h4>
-          <p class="muted">Expert medical faculty, topic-wise tests and dedicated doubt-clearing.</p>
-        </article>
-
-        <article class="card">
-          <img src="career.png" alt="Foundation">
-          <h4>Career Foundation</h4>
-          <p class="muted">Foundation programs for Class 7–10 to build strong basics.</p>
+        <article class="card" role="listitem">
+          <h3>Career Foundation</h3>
+          <small class="muted">Class 7–10 foundation • Olympiad prep • Study-skills</small>
+          <p style="margin-top:10px">Build fundamentals early for top performance later.</p>
         </article>
       </div>
     </section>
 
     <!-- Results -->
-    <section id="results" class="section container">
-      <h3>Our Results</h3>
-      <div class="results" style="margin-top:12px">
-        <div class="badge">NEET 677</div>
-        <div class="badge">AIIMS Selections</div>
-        <div class="badge">IIT AIR Top 100</div>
-        <div class="muted" style="flex:1">Consistent track record of selections & top ranks. View full results in our Results page.</div>
+    <section id="results" aria-labelledby="resultsHeading">
+      <div class="section-head">
+        <h2 id="resultsHeading">Our Results</h2>
+        <small class="muted">Top ranks and high scores — recent success stories</small>
+      </div>
+      <div class="result-grid" aria-hidden="false">
+        <div class="result-item"><strong>NEET</strong><div>677 / 720</div></div>
+        <div class="result-item"><strong>NEET</strong><div>675 / 720</div></div>
+        <div class="result-item"><strong>IIT-JEE</strong><div>AIR 3</div></div>
+        <div class="result-item"><strong>IIT-JEE</strong><div>AIR 35</div></div>
       </div>
     </section>
 
-    <!-- Testimonials (Swiper) -->
-    <section class="section container">
-      <h3>Student & Parent Testimonials</h3>
-      <div class="swiper" id="testiSwiper" style="margin-top:12px">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide testimonials card">
-            <strong>Athrwa's Parents</strong>
-            <p class="muted">“Gurukul Classes provided personalized attention and excellent mentoring. We saw dramatic improvement.”</p>
+    <!-- Testimonials -->
+    <section id="testimonials" aria-labelledby="testimonialsHeading">
+      <div class="section-head">
+        <h2 id="testimonialsHeading">What Parents & Students Say</h2>
+        <small class="muted">Verified feedback from our students</small>
+      </div>
+
+      <div class="testimonials">
+        <div class="list" id="testiList" aria-live="polite">
+          <div class="testimonial">
+            <h4>Athrwa Parent</h4>
+            <p>"Gurukul Classes provided the right structure and constant support. My child's performance improved dramatically."</p>
           </div>
-          <div class="swiper-slide testimonials card">
-            <strong>Shreejeet's Parents</strong>
-            <p class="muted">“Dedicated teachers, strong practice routine and timely feedback — very satisfied.”</p>
+          <div class="testimonial">
+            <h4>Shreejeet Parent</h4>
+            <p>"Excellent faculty & discipline. The mock tests were very similar to the real exams."</p>
           </div>
-          <div class="swiper-slide testimonials card">
-            <strong>Onkar's Parents</strong>
-            <p class="muted">“Great study material and consistent guidance helped my child gain confidence.”</p>
+          <div class="testimonial">
+            <h4>Onkar Parent</h4>
+            <p>"Personal attention and doubt sessions made the difference."</p>
           </div>
         </div>
-        <div class="swiper-pagination"></div>
+
+        <aside class="card">
+          <h3>Recent Achiever</h3>
+          <p><strong>Yash Rathi</strong><br>NEET 675 / 720 — AIIMS (Rushikesh)</p>
+          <a class="btn btn-outline" href="#contact">Know More</a>
+        </aside>
       </div>
     </section>
 
-    <!-- Media / Gallery -->
-    <section id="media" class="section container">
-      <h3>In The Media & Gallery</h3>
-      <div class="grid" style="margin-top:12px">
-        <div class="card"><img src="WhatsApp Image 2025-01-20 at 12.20.24_36282dc5.jpg" alt="media 1"></div>
-        <div class="card"><img src="WhatsApp Image 2025-01-20 at 12.20.24_aac5efd8.jpg" alt="media 2"></div>
-        <div class="card"><img src="WhatsApp Image 2025-01-20 at 12.20.25_f57bf8c9.jpg" alt="media 3"></div>
-        <div class="card"><img src="marathi copywriting.jpg" alt="media 4"></div>
+    <!-- Gallery -->
+    <section aria-labelledby="galleryHeading">
+      <div class="section-head">
+        <h2 id="galleryHeading">Gallery</h2>
+        <small class="muted">Classroom, events & campus photos</small>
+      </div>
+      <div class="gallery" role="list">
+        <img src="gallery1.jpg" alt="Classroom photo" loading="lazy">
+        <img src="gallery2.jpg" alt="Students at test" loading="lazy">
+        <img src="gallery3.jpg" alt="Award ceremony" loading="lazy">
+        <img src="gallery4.jpg" alt="Study session" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Careers / Telecaller -->
+    <section id="careers" aria-labelledby="careersHeading">
+      <div class="section-head">
+        <h2 id="careersHeading">Join Our Team — Telecaller (Admissions)</h2>
+        <small class="muted">Part-time / Full-time • Office-based • Immediate joining</small>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Telecaller — Job Summary</h3>
+          <p>As a Telecaller at Gurukul Classes you will be the first point of contact for prospective students & parents. You’ll handle inbound/outbound calls, answer queries, schedule campus visits, and convert leads into admissions.</p>
+
+          <h4>Key Responsibilities</h4>
+          <ul>
+            <li>Make outbound calls to prospective students & parents.</li>
+            <li>Handle inbound admission inquiries via phone & WhatsApp.</li>
+            <li>Explain course details, fees, batch timings, and hostel information.</li>
+            <li>Maintain leads, follow-ups and update CRM/Excel daily.</li>
+            <li>Coordinate with counselors and admission team for demos & visits.</li>
+          </ul>
+
+          <h4>Requirements</h4>
+          <ul>
+            <li>12th pass (Graduation preferred).</li>
+            <li>Excellent communication in Marathi & Hindi; basic English.</li>
+            <li>Good phone manners, persuasive & polite.</li>
+            <li>Basic computer skills (Excel, WhatsApp).</li>
+            <li>Experience in education sales is a plus.</li>
+          </ul>
+
+          <p><strong>Salary:</strong> Fixed + performance incentives. Training provided.</p>
+          <a class="btn btn-primary" href="#contact">Apply Now</a>
+        </article>
+
+        <article class="card">
+          <h3>How to Apply</h3>
+          <ol style="padding-left:18px;margin-top:6px">
+            <li>Fill the contact form below with subject "Telecaller Application".</li>
+            <li>Attach a short intro message and preferred joining date.</li>
+            <li>We will contact shortlisted candidates for an interview.</li>
+          </ol>
+        </article>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section container">
-      <h3>Get in Touch</h3>
-      <div class="grid" style="margin-top:12px;grid-template-columns:1fr 380px">
-        <div>
-          <p class="muted">Fill the form and our counselors will contact you soon.</p>
+    <section id="contact" aria-labelledby="contactHeading">
+      <div class="section-head">
+        <h2 id="contactHeading">Get In Touch</h2>
+        <small class="muted">Questions? Counselling? Admissions help?</small>
+      </div>
 
-          <form id="contactForm" aria-label="Contact form">
-            <div class="row-2">
-              <input name="firstName" placeholder="First Name" required />
-              <input name="phone" placeholder="Phone number" required type="tel" />
+      <div class="contact-grid">
+        <div class="card form" aria-labelledby="formHeading">
+          <h3 id="formHeading">Contact / Enquiry Form</h3>
+          <form id="contactForm" method="post" action="FORM_ACTION_URL">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" name="name" required placeholder="Your name">
             </div>
-            <div class="row-2" style="margin-top:6px">
-              <input name="email" placeholder="Email address" required type="email" />
-              <input name="subject" placeholder="Subject (optional)"/>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" required placeholder="Phone number" type="tel">
             </div>
-            <textarea name="message" placeholder="Your message..." required></textarea>
-            <div style="display:flex;gap:12px;align-items:center">
-              <button type="submit" class="btn btn-primary">Send Message</button>
-              <div id="formStatus" class="muted" aria-live="polite"></div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" placeholder="Email (optional)" type="email">
             </div>
+            <div class="field">
+              <label for="message">Message / Query</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us what you need" required></textarea>
+            </div>
+            <input type="hidden" name="source" value="website_homepage">
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <div id="formResponse" style="margin-top:10px;font-size:14px"></div>
           </form>
         </div>
 
         <aside class="card">
-          <h4>Contact Details</h4>
-          <p><strong>Address:</strong> 1st Floor, Sarda Arcade, Above Canara Bank, Friends Colony, Station Road, Padampura, Chhatrapati Sambhajinagar, 431005</p>
-          <p><strong>Phone:</strong> <a href="tel:+918668689849">+91 86686 89849</a></p>
-          <p><strong>Email:</strong> <a href="mailto:gurukulclasses57@gmail.com">gurukulclasses57@gmail.com</a></p>
-          <p><strong>Website:</strong> <a href="https://www.gurukulclassesiit.co.in/">gurukulclassesiit.co.in</a></p>
+          <h3>Visit or Call</h3>
+          <p><strong>Address</strong><br>1st Floor, Sarda Arcade, Above Canara Bank, Friends Colony, Station Road, Padampura, Chhatrapati Sambhajinagar, 431005</p>
+          <p><strong>Phone</strong><br><a href="tel:+918668689849">+91 86686 89849</a></p>
+          <p><strong>Email</strong><br><a href="mailto:gurukulclasses57@gmail.com">gurukulclasses57@gmail.com</a></p>
+          <div style="margin-top:8px">
+            <a class="btn btn-outline" href="https://www.facebook.com/gurukulclassesiit/" target="_blank" rel="noopener">Facebook</a>
+          </div>
         </aside>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
-    <div class="container footer-grid" style="align-items:center">
+    <div class="container footer-grid">
       <div>
-        <h4>Gurukul Classes</h4>
-        <small class="muted">NEET | IIT-JEE | Foundation</small>
+        <strong>Gurukul Classes</strong>
+        <p class="muted">NEET & JEE Coaching • Chhatrapati Sambhajinagar</p>
+        <p style="margin-top:10px"><small>© Gurukul Classes 2025 — All rights reserved</small></p>
       </div>
 
-      <div>
-        <p><strong>Follow Us</strong></p>
-        <p>
-          <a href="https://www.facebook.com/gurukulclassesiit/" target="_blank" rel="noopener">Facebook</a> ·
-          <a href="https://www.instagram.com/girisirsgurukulclasses/" target="_blank" rel="noopener">Instagram</a> ·
-          <a href="https://www.youtube.com/@gurukulcareeravenue8932" target="_blank" rel="noopener">YouTube</a>
-        </p>
-      </div>
-
-      <div>
-        <p><strong>Quick Links</strong></p>
-        <p><a href="#courses">Courses</a> · <a href="#results">Results</a> · <a href="#contact">Contact</a></p>
-      </div>
-
-      <div>
-        <small>&copy; 2025 Gurukul Classes — Designed by Finsoft Digital</small>
+      <div style="text-align:right">
+        <small class="muted">Designed by Finsoft Digital</small><br>
+        <small>Follow us:</small>
+        <div style="margin-top:8px">
+          <a href="https://www.facebook.com/gurukulclassesiit/" aria-label="Facebook">Facebook</a> &nbsp;
+          <a href="https://www.instagram.com/girisirsgurukulclasses/" aria-label="Instagram">Instagram</a> &nbsp;
+          <a href="https://www.youtube.com/@gurukulcareeravenue8932" aria-label="YouTube">YouTube</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+  <!-- Light JS: slider, testimonials rotate, form submit handling -->
   <script>
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const navList = document.getElementById('navList');
-    menuToggle.addEventListener('click', () => {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', String(!expanded));
-      if (navList.style.display === 'flex') navList.style.display = 'none';
-      else navList.style.display = 'flex';
-      navList.style.flexDirection = 'column';
-    });
+    // Responsive nav toggle
+    (function(){
+      const navToggle = document.getElementById('navToggle');
+      navToggle.addEventListener('click', () => {
+        const nav = document.getElementById('main-nav');
+        const shown = getComputedStyle(nav).display !== 'none';
+        nav.style.display = shown ? 'none' : 'flex';
+        navToggle.setAttribute('aria-expanded', (!shown).toString());
+      });
+    })();
 
-    // Main hero/gallery swiper
-    const mainSwiper = new Swiper('#mainSwiper', {
-      slidesPerView: 1,
-      spaceBetween: 14,
-      loop: true,
-      pagination: { el: '.swiper-pagination', clickable: true },
-      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-      autoplay: { delay: 3000, disableOnInteraction: false },
-      breakpoints: { 700: { slidesPerView: 2 }, 1000: { slidesPerView: 3 } }
-    });
+    // Simple slider
+    (function(){
+      const slidesWrap = document.getElementById('slidesWrap');
+      const slides = slidesWrap.children;
+      const total = slides.length;
+      let index = 0;
+      const dotsContainer = document.getElementById('sliderDots');
 
-    // Testimonials swiper
-    const testiSwiper = new Swiper('#testiSwiper', {
-      slidesPerView: 1,
-      loop: true,
-      autoplay: { delay: 4500, disableOnInteraction: false },
-      pagination: { el: '#testiSwiper .swiper-pagination', clickable: true }
-    });
-
-    // Contact form submit (replace FORM_ENDPOINT with real endpoint)
-    const contactForm = document.getElementById('contactForm');
-    const formStatus = document.getElementById('formStatus');
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      formStatus.textContent = 'Sending...';
-      const data = Object.fromEntries(new FormData(contactForm).entries());
-
-      try {
-        const resp = await fetch('FORM_ENDPOINT', { // REPLACE this with your form endpoint (Google Apps Script / server)
-          method: 'POST',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify(data)
-        });
-
-        if (!resp.ok) throw new Error('Network error');
-        formStatus.textContent = 'Message sent — we will contact you soon.';
-        contactForm.reset();
-      } catch (err) {
-        console.error(err);
-        formStatus.textContent = 'Error sending message. Try again later.';
+      function buildDots(){
+        for(let i=0;i<total;i++){
+          const d = document.createElement('button');
+          d.className = 'dot';
+          d.setAttribute('aria-label','Go to slide '+(i+1));
+          d.addEventListener('click', ()=>{ goTo(i); });
+          dotsContainer.appendChild(d);
+        }
+        dotsContainer.children[0].classList.add('active');
       }
-    });
+
+      function refresh(){
+        slidesWrap.style.transform = 'translateX(-' + (index*100) + '%)';
+        Array.from(dotsContainer.children).forEach((d,i)=> d.classList.toggle('active', i===index));
+      }
+
+      function next(){ index = (index+1) % total; refresh(); }
+      function prev(){ index = (index-1+total) % total; refresh(); }
+      function goTo(i){ index = i; refresh(); }
+
+      document.getElementById('nextSlide').addEventListener('click', next);
+      document.getElementById('prevSlide').addEventListener('click', prev);
+
+      buildDots();
+      let sliderTimer = setInterval(next, 4000);
+      // pause on hover
+      const heroSlider = document.getElementById('heroSlider');
+      heroSlider.addEventListener('mouseover', ()=> clearInterval(sliderTimer));
+      heroSlider.addEventListener('mouseout', ()=> sliderTimer = setInterval(next, 4000));
+    })();
+
+    // Simple testimonial rotation (accessible)
+    (function(){
+      const list = document.querySelectorAll('#testiList .testimonial');
+      let tIndex = 0;
+      if(list.length>1){
+        setInterval(()=> {
+          list.forEach((n,i)=> n.style.display = i===tIndex ? 'block' : 'none');
+          tIndex = (tIndex + 1) % list.length;
+        }, 6000);
+      }
+    })();
+
+    // Contact form: basic AJAX submit (replace FORM_ACTION_URL in form action with actual endpoint)
+    (function(){
+      const form = document.getElementById('contactForm');
+      const responseBox = document.getElementById('formResponse');
+      if(!form) return;
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        responseBox.textContent = 'Sending...';
+        const action = form.action;
+        const data = new FormData(form);
+
+        // If action still placeholder, show helpful message and skip network
+        if(!action || action.trim() === '' || action.includes('FORM_ACTION_URL')){
+          // Show sample JSON to copy to Google Apps Script or API
+          const payload = {};
+          data.forEach((v,k) => payload[k] = v);
+          responseBox.innerHTML = 'Replace FORM_ACTION_URL with your Google Apps Script / server endpoint. Sample payload:<pre style="background:#f4f7fb;padding:8px;border-radius:6px;">'+ JSON.stringify(payload, null, 2) + '</pre>';
+          return;
+        }
+
+        fetch(action, {
+          method:'POST',
+          body: data
+        })
+        .then(r=> r.ok ? r.text() : Promise.reject(r))
+        .then(()=> {
+          responseBox.style.color = 'green';
+          responseBox.textContent = 'Thank you — we will contact you shortly.';
+          form.reset();
+        })
+        .catch(err=>{
+          responseBox.style.color = 'crimson';
+          responseBox.textContent = 'There was a problem sending the form. Please call +91 86686 89849.';
+          console.error(err);
+        });
+      });
+    })();
   </script>
 </body>
 </html>
