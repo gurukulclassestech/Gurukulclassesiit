@@ -1,735 +1,411 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta name="viewport" 
-  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <title>gurukulclassesiit</title>
-    <link rel="shortcut icon" type="x-icon" href="Giri Siri’s.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaquries.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gurukul Classes — Best NEET & JEE Coaching in Aurangabad</title>
+  <meta name="description" content="Gurukul Classes — Top NEET & IIT-JEE coaching in Chhatrapati Sambhajinagar (Aurangabad). Expert faculty, proven results, foundation & online classes." />
+  <meta name="keywords" content="Gurukul NEET Coaching Aurangabad, JEE Coaching Sambhajinagar, IIT JEE coaching Aurangabad" />
+  <link rel="canonical" href="https://www.gurukulclassesiit.co.in/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gurukul Classes — NEET & JEE Coaching Aurangabad" />
+  <meta property="og:description" content="Top coaching institute offering NEET & IIT-JEE programs, foundation courses, and online classes." />
+  <meta property="og:image" content="https://www.gurukulclassesiit.co.in/gurukul.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="Giri Siri’s.png" type="image/png" />
+
+  <!-- Swiper (Slider) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#0b5ed7;
+      --accent:#ff6b6b;
+      --bg:#0f1723;
+      --muted:#6b7280;
+      --card-bg:#ffffff;
+      --max-width:1200px;
+      font-family: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    /* Reset & container */
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#f6f8fb;color:#0b1220;line-height:1.5}
+    .container{max-width:var(--max-width);margin:0 auto;padding:0 16px}
+
+    /* Header / Nav */
+    header{background:linear-gradient(90deg,#0b5ed7 0%, #3b82f6 100%);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 4px 18px rgba(11,78,215,0.18)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:48px;width:auto;object-fit:contain}
+    .brand h1{font-size:18px;font-weight:700;letter-spacing:0.4px}
+    nav ul{display:flex;gap:14px;list-style:none;align-items:center}
+    nav a{color:#fff;text-decoration:none;padding:8px 10px;border-radius:6px;font-weight:600}
+    nav a:hover{background:rgba(255,255,255,0.08)}
+
+    /* Mobile menu */
+    .menu-toggle{display:none;background:transparent;border:none;color:#fff;font-size:22px}
+    @media (max-width:900px){
+      nav ul{display:none;position:absolute;right:16px;top:66px;background:linear-gradient(180deg,#0b5ed7,#3b82f6);padding:12px;border-radius:8px;flex-direction:column;width:220px;box-shadow:0 10px 30px rgba(11,78,215,0.2)}
+      .menu-toggle{display:inline-block}
+    }
+
+    /* Hero */
+    .hero{padding:44px 0;background:linear-gradient(180deg,#f7fbff 0%, #ffffff 100%)}
+    .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    .hero h2{font-size:28px;color:var(--bg);margin-bottom:8px}
+    .hero p.lead{color:var(--muted);margin-bottom:16px}
+    .ctas{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700}
+    .btn-primary{background:var(--primary);color:#fff}
+    .btn-ghost{background:transparent;border:2px solid #e6eefc;color:var(--primary)}
+    .hero-card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 8px 20px rgba(6,21,34,0.06)}
+
+    /* Info rows (Courses / Facilities) */
+    .section{padding:34px 0}
+    .section h3{font-size:20px;margin-bottom:8px}
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .card{background:#fff;border-radius:10px;padding:16px;box-shadow:0 6px 18px rgba(6,21,34,0.06)}
+    .card img{max-width:100%;height:120px;object-fit:cover;border-radius:6px;margin-bottom:12px}
+
+    /* Results / achievements */
+    .results{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+    .badge{background:linear-gradient(90deg,#ffd54a,#ff6b6b);color:#041124;padding:14px;border-radius:10px;font-weight:700}
+
+    /* Swiper card styles */
+    .swiper{padding:12px 0}
+    .swiper .card{padding:12px}
+
+    /* Testimonials */
+    .testimonials{background:#fff;padding:24px;border-radius:10px;box-shadow:0 6px 20px rgba(6,21,34,0.04)}
+    .testimonial{padding:10px}
+
+    /* Contact form */
+    form{display:grid;gap:12px}
+    input,textarea,button{font-family:inherit;font-size:15px}
+    input,textarea{padding:12px;border:1px solid #e6e9ef;border-radius:8px;width:100%}
+    textarea{min-height:120px;resize:vertical}
+    .row-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:720px){.hero-grid{grid-template-columns:1fr}.row-2{grid-template-columns:1fr}nav ul{right:12px}}
+
+    footer{background:#0f1723;color:#cbd5e1;padding:28px 0;margin-top:30px}
+    footer .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;align-items:start}
+    footer a{color:#cbd5e1;text-decoration:none}
+    small{color:var(--muted)}
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+  </style>
+
+  <!-- Structured data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"EducationalOrganization",
+    "name":"Gurukul Classes",
+    "url":"https://www.gurukulclassesiit.co.in/",
+    "logo":"https://www.gurukulclassesiit.co.in/gurukul.png",
+    "sameAs":[
+      "https://www.facebook.com/gurukulclassesiit/",
+      "https://www.instagram.com/girisirsgurukulclasses/"
+    ],
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"1st Floor, Sarda Arcade, Above Canara Bank, Friends Colony, Station Road, Padampura",
+      "addressLocality":"Chhatrapati Sambhajinagar",
+      "addressRegion":"Maharashtra",
+      "postalCode":"431005",
+      "addressCountry":"IN"
+    }
+  }
+  </script>
 </head>
-<body>  
-    <section class="header">
-        <nav>
-            <a href="#"><img src="gurukul.png" width="220" height="60"></a>
-            <div class="nav-links">
-              <i class="bi bi-x-circle-fill" onclick="hideMenu()"></i>
-              <ul class="nav-list">
-                <li><a href="index.htm">Home</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">About +</a>
-                    <ul class="dropdown-content">
-                        <li><a href="About.htm">About Us</a></li>
-                        <li><a href="founder.htm">Founder's Message</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="#" class="dropbtn">Course +</a>
-                  <ul class="dropdown-content">
-                      <li><a href="engg.htm">Engineer</a></li>
-                      <li><a href="medical.htm">Medical</a></li>
-                      <li><a href="carrer.htm">Career Foundation</a></li>
-                  </ul>
-                  <li class="dropdown">
-                    <a href="#" class="dropbtn">Admission +</a>
-                    <ul class="dropdown-content">
-                        <li><a href="#">Pay Fee</a></li>
-                        <li><a href="#">Admission Procedure</a></li>
-                        <li><a href="#">Online Application Form</a></li>
-                   
-                    </ul>
-                 <li class="dropdown">
-                    <a href="#" class="dropbtn">Class Test +</a>
-                         <ul class="dropdown-content">
-                         <a href="#" class="dropbtn">Mock Test +</a>
-                          <li><a href="mock.htm">11th JEE / NEET Mock Test</a></li>
-                          <li><a href="12mook.htm">12th JEE / NEET Mock Test</a></li>
-            
-            
-                    </ul>
-                    <li class="dropdown">
-                    <a href="#" class="dropbtn">Result +</a>
-                    <ul class="dropdown-content">
-                        <li><a href="https://neet.ntaonline.in/frontend/web/scorecard/index">NEET 2024 Result </a></li>
-                        <li><a href="https://jeemainsession2.ntaonline.in/frontend/web/scorecard/index">Result JEE Main 2020</a></li>
-                        <li><a href="https://cetcell.mahacet.org/">Engineering Students</a></li>
-                        <li><a href="https://neet.ntaonline.in/frontend/web/scorecard/index">NEET 2023 Result</a></li>
-                        <li><a href="https://mahresult.nic.in/hscjul2024/hscjul2024.htm">12th Board Result 2020</a></li>
-                    </ul>
-                <li><a href="#">Downlods +</a></li>
-                <li><a href="Contact.htm">Contact Us</a></li>
-            </ul>
-        </nav>
-        <div class="top-header ">
-            <div class="container">
-            <div class="width-1">
-            <b class="news-list">News Update</b>
-            <marquee class="quote" onmouseout="start()" onmousemove="stop()" > 
-              <img src="index.gif">
-               <a href="https://docs.google.com/forms/d/12lTBN-crryuzbkcXQZ3IjQVgk1JhaydXASczT7rjmuM/edit#responses" target="_blank" style="color: white;">Admission Open 2025 GPAT For Class 7th to 10th</a> 
-               <img src="index.gif">
-              <img src="index.gif">
-               <a href="https://docs.google.com/forms/u/6/d/17WH1rEXbpBEUcG_KlJijHJhSMGTcZW1WUBKUQToqWTI/edit?pli=1" target="_blank" style="color: white;">G-PAT Exam Registration 2025</a> 
-               <img src="index.gif">
-              </marquee>
-                    
-            </div>
-            </div>
-            </div>
-            <div class="slideshow-container">
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="Your paragraph text (2).png" style="width: 100%;">
-              </div>
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="Your paragraph text.png" style="width: 100%;">
-              </div>
-              
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="Untitled (20 x 29 in) (25 x 35 in) (1366 x 768 px).png" style="width: 100%;">
-              </div>
-              
-              
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="Best Employee (1080 x 768 px).png" style="width: 100%;">
-              </div>
+<body>
 
-           
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="1.jpeg" style="width: 50%;">
-              </div>
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="2.jpeg" style="width: 50%;">
-              </div>
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="3.jpeg" style="width: 50%;">
-              </div>
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="4.jpeg" style="width: 50%;">
-              </div>
-             
-              <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="Your paragraph text (1).png" style="width: 100%;">
-              </div>
-
-              <div style="text-align:center">
-                <span class="dot"></span> 
-                <span class="dot"></span> 
-                <span class="dot"></span> 
-                <span class="dot"></span> 
-                <span class="dot"></span>
-                <span class="dot"></span>  
-              </div>
-              
-              <script>
-let slideIndex = 0;
-
-function showSlides() {
-  const slides = document.getElementsByClassName("mySlides");
-  const dots = document.getElementsByClassName("dot");
-
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-
-  slideIndex++;
-  if (slideIndex > slides.length) slideIndex = 1;
-
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-}
-
-// Start automatic slideshow
-showSlides();
-setInterval(showSlides, 2000);
-</script>
-
-                <div class="width-100">
-                </div>
-                </div>
-                    <div class="notices-board" >
-                    <div class="heading-sect"> 
-                      
-                <h3 class="head-title"><img src="001-bell.png"> Notics Board</h3>
-                </div>
-                <marquee width="100%" direction="up" height="320px"onmouseout="start()" onmousemove="stop()">
-                <ul class="notices-board-ul">
-                  
-                  <li><img src="index.gif">
-                     <a href="#">Gurukul Class Test</a></li>
-                 <li><img src="index.gif">
-                    <a href="https://docs.google.com/forms/d/1IrEdahQJUpV5mTkT67J4uUryM3qcQ1rlDVbXtq1hdhs/viewform?edit_requested=true">12th JEE MAINS 1 </a></li>
-                 <li><img src="index.gif">
-                    <a href="https://docs.google.com/forms/d/10bdmt3IyFZ-ThvkWfl8UQm7f_zCMsV83Zdtgjg_fWB4/viewform?edit_requested=true#settings">
-                     JEE Main Practices Test</a>
-                    </li>
-                  <li><img src="index.gif">
-                     <a href="https://docs.google.com/forms/d/1fLWNLcOF-DtGuw-7zt5RAEh5O6ger8L754ZfuyJ1ark/viewform?edit_requested=true">
-                      JEE Advances Practices Test</a>
-                    </li>
-                  <li><img src="index.gif">
-                    <a href="https://docs.google.com/forms/d/17zh3RsHJJ0i0AucQhLtGl7JzdGSvbU-nZ7tLqHBIAd4/edit#settings">
-                    JEE Main/Advanced</a>
-                  </li>
-                  <li><img src="index.gif">
-                    <a href="https://docs.google.com/forms/d/1FX_wb8gu2mbeqr41gAnOvNdBneoAoeOIoeIO-vShRNw/edit">
-                    JEE 11th </a>
-                  </li>
-                  <li><img src="index.gif">
-                    <a href="https://docs.google.com/forms/d/1sv0Em-UW6Kd3Y-S8ky6yfB9H6YCZAewtgJIDx7FyrF8/edit#responses">
-                      JEE 12th</a>
-                    </li>
-                
-                </marquee>
-                </ul>
-            
-    </section>
-    <div class="Course">
-        <h1>Classroom&nbsp;
-            <span class="cs-text">Courses</span>
-        </h1>
-        <p>Our Available Courses</p>
-    </div>
-        <!---Course-->
-        <div class="row">
-          <div class="course-col"><img src="setting.png" class="center">
-            <h2>JEE (MAIN+ADVANCED) IIT-JEE</h2>
-            <p>Gurukul Classes is equipped with the team of top most faculties for preparation of
-              JEE (Main+Advanced)... </p>
-          </div>
-          <div class="course-col"><img src="engineering.png" class="center">
-            <h2>JEE (MAIN)</h2>
-            <p>JEE (Main) 
-              courses designed by Kota Classes are unique and are as per the latest examination pattern... </p>
-          </div>
-          <div class="course-col"><img src="doctor.png" class="center">
-            <h2>NEET (UG)</h2>
-            <p>Kota Classes has long been distinguished for the best faculty team of Doctors and IITians  which Individual Care for NEET and AIIMS preparing aspirants...... </p>
-          </div>
-          <div class="course-col"><img src="career.png" class="center">
-            <h2>Career Foundation</h2>
-            <p>We offer courses for various Competitive Exams and Olympiads for the students of classes 9th to 10th... </p>
-          </div>
-        </div>
-
-        <!--campus-->
-
-         <section class="Campus">
-          <h1>Facilities at Gurukul Classes</h1>
-          <p>.........</p>
-
-          <div class="row">
-            <div class="Campus-col">
-              <img src="website (7).png">
-              <div class="layer">
-                <h3>.</h3>
-              </div>
-            </div>
-            <div class="Campus-col">
-              <img src="website (7).png">
-              <div class="layer">
-                <h3>.</h3>
-              </div>
-            </div>
-            <div class="Campus-col">
-              <img src="website (7).png">
-              <div class="layer">
-                <h3>.</h3>
-              </div>
-            </div>
-            <div class="Campus-col">
-              <img src="website (7).png">
-              <div class="layer">
-                <h3>.</h3>
-              </div>
-            </div>
-          </div>
-         </section>
-<!--Result-->
-<section class="Result">
-  <b class="OUR-RESULT">OUR RESULTS<b>
-  <p class="ass">Gurukul's unique Teaching Methodology Continues to deliver quality Results.....</p>
-</section>         
-          
-<!--row start-->
-<section class="slider">
-  <head>
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="slide-container swiper">
-      <div class="slide-content">
-        <div class="card-wrapper swiper-wrapper">
-          <div class="card swiper-slide">
-            <div class="image-content">
-              <span class="overlay"></span>
-              <div class="card-image">
-                <img src="YASH RATHI - Copy.JPG" alt="" class="card-img">
-              </div>
-            </div>
-            <div class="card-content">
-              <h2 class="name">Yash Rathi</h2>
-              <p class="description">NEET 675 out of 720</p>
-              <p class="description">AIIMS-Rushikesh.</p>
-              <button class="button">View More</button>
-            </div>
-          </div>
-          <div class="card swiper-slide">
-            <div class="image-content">
-              <span class="overlay"></span>
-              <div class="card-image">
-                <img src="Picture3.png" alt="" class="card-img">
-              </div>
-            </div>
-            <div class="card-content">
-              <h2 class="name">Suyash Kulkarani</h2>
-              <p class="description">NEET 656 out of 720</p>
-              <p class="description">AIIMS-Bhopal.</p>
-              <button class="button">View More</button>
-            </div>
-          </div>
-          <div class="card swiper-slide">
-            <div class="image-content">
-              <span class="overlay"></span>
-              <div class="card-image">
-                <img src="athrwa.jpg" alt="" class="card-img">
-              </div>
-            </div>
-            <div class="card-content">
-              <h2 class="name">Athrva Nandapurkar</h2>
-              <p class="description">AIR 3 </p>
-              <p class="description">IIT Mumbai</p>
-              <button class="button">View More</button>
-            </div>
-          </div>
-          <div class="card swiper-slide">
-            <div class="image-content">
-              <span class="overlay"></span>
-              <div class="card-image">
-                <img src="Picture4.png" alt="" class="card-img">
-              </div>
-            </div>
-            <div class="card-content">
-              <h2 class="name">Anas Ali</h2>
-              <p class="description">NEET 659 out of 720</p>
-              <p class="description">KEM-Mumbai</p>
-              <button class="button">View More</button>
-            </div>
-          </div>
-          <div class="card swiper-slide">
-            <div class="image-content">
-              <span class="overlay"></span>
-              <div class="card-image">
-                <img src="UTKARSH ZAWAR - Copy.JPG" alt="" class="card-img">
-              </div>
-            </div>
-            <div class="card-content">
-              <h2 class="name">Utkarsh Zawar</h2>
-              <p class="description">NEET 677 out of 720.</p>
-              <p class="description">AIIMS-Jaitapur.</p>
-              <button class="button">View More</button>
-            </div>
-          </div>
-          <div class="card swiper-slide">
-            <div class="image-content">
-              <span class="overlay"></span>
-              <div class="card-image">
-                <img src="unnamed.png" alt="" class="card-img">
-              </div>
-            </div>
-            <div class="card-content">
-              <h2 class="name">Ruchita Kulkarni</h2>
-              <p class="description">NEET 619 out of 720.</p>
-              <p class="description">Goverment Medical College.</p>
-              <button class="button">View More</button>
-            </div>
-          </div>
-          <div class="card swiper-slide">
-            <div class="image-content">
-              <span class="overlay"></span>
-              <div class="card-image">
-                <img src="aas.png" alt="" class="card-img">
-              </div>
-            </div>
-            <div class="card-content">
-              <h2 class="name">Shraddha Darbeshwar</h2>
-              <p class="description">NEET 620 out of 720.</p>
-              <p class="description">Goverment Medical College.</p>
-              <button class="button">View More</button>
-            </div>
-          </div>
-          <div class="card swiper-slide">
-            <div class="image-content">
-              <span class="overlay"></span>
-              <div class="card-image">
-                <img src="35 Shreejeet Golhait.jpg" alt="" class="card-img">
-              </div>
-            </div>
-            <div class="card-content">
-              <h2 class="name">Shreejeet Golhait</h2>
-              <p class="description">AIR 35 IN IIT.</p>
-              <p class="description">IIT Delhi</p>
-              <button class="button">View More</button>
-            </div>
-          </div>
-          <div class="card swiper-slide">
-            <div class="image-content">
-              <span class="overlay"></span>
-              <div class="card-image">
-                <img src="Rishikesh.jpg" alt="" class="card-img">
-              </div>
-            </div>
-            <div class="card-content">
-              <h2 class="name">Rishikesh Banker</h2>
-              <p class="description">AIR 97 IN IIT.</p>
-              <p class="description">IIT- Mumbai.</p>
-              <button class="button">View More</button>
-            </div>
-          </div>
+  <!-- Header / Nav -->
+  <header>
+    <div class="container nav" role="navigation" aria-label="Main navigation">
+      <div class="brand">
+        <a href="/" aria-label="Gurukul home"><img src="gurukul.png" alt="Gurukul logo"></a>
+        <div>
+          <h1 style="font-size:15px;margin:0">Gurukul Classes</h1>
+          <small class="muted">NEET | IIT-JEE | Foundation</small>
         </div>
       </div>
-      <div class="swiper-button-next swiper-navBtn"></div>
-      <div class="swiper-button-prev swiper-navBtn"></div>
-      <div class="swiper-pagination"></div>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" id="menuToggle">☰</button>
+
+      <nav id="site-nav">
+        <ul id="navList">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#media">Media</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-  </body>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-grid">
+        <div>
+          <h2>Top NEET &amp; IIT-JEE Coaching in Chhatrapati Sambhajinagar</h2>
+          <p class="lead">Expert faculty, personal doubt-solving, regular tests, and a track record of excellent results. Join our Foundation, 11th/12th, or Crash courses — offline & online.</p>
+
+          <div class="ctas">
+            <a class="btn btn-primary" href="#contact">Enquire Now</a>
+            <a class="btn btn-ghost" href="#courses">View Courses</a>
+          </div>
+
+          <div style="margin-top:18px" class="muted">
+            <strong>Admissions:</strong> Seats open for 2025. Call: <a href="tel:+918668689849">+91 86686 89849</a>
+          </div>
+
+          <div style="margin-top:18px" class="section">
+            <h3>Why Gurukul?</h3>
+            <ul style="margin-top:8px;list-style:disc;padding-left:18px;color:var(--muted)">
+              <li>Experienced IITians & Doctors as faculty</li>
+              <li>Daily practice papers, weekly tests & performance tracking</li>
+              <li>Hostel facilities, disciplined environment & individual mentoring</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h4 style="margin-bottom:8px">Quick Links</h4>
+          <p class="muted" style="margin-bottom:10px">Openings, Mock Tests & Admissions</p>
+          <a class="btn btn-primary" href="#" style="display:block;margin-bottom:8px">Register for G-PAT</a>
+          <a class="btn" href="#" style="display:block;background:#eef6ff;border-radius:8px">Download Prospectus</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SLIDER (Swiper) -->
+    <section class="section container">
+      <h3 style="margin-bottom:12px">Highlights / Gallery</h3>
+      <div class="swiper" id="mainSwiper">
+        <div class="swiper-wrapper">
+          <!-- Replace image src with your real files -->
+          <div class="swiper-slide card"><img src="Your paragraph text (2).png" alt="slide 1"></div>
+          <div class="swiper-slide card"><img src="Your paragraph text.png" alt="slide 2"></div>
+          <div class="swiper-slide card"><img src="Best Employee (1080 x 768 px).png" alt="slide 3"></div>
+          <div class="swiper-slide card"><img src="1.jpeg" alt="slide 4"></div>
+          <div class="swiper-slide card"><img src="2.jpeg" alt="slide 5"></div>
+          <div class="swiper-slide card"><img src="3.jpeg" alt="slide 6"></div>
+        </div>
+
+        <!-- Controls -->
+        <div class="swiper-pagination" aria-hidden="true"></div>
+        <div class="swiper-button-prev" aria-label="Previous slide"></div>
+        <div class="swiper-button-next" aria-label="Next slide"></div>
+      </div>
+    </section>
+
+    <!-- Courses -->
+    <section id="courses" class="section container">
+      <h3>Our Programs</h3>
+      <p class="muted">Classroom & online programs for Foundation, JEE Main, JEE Advanced & NEET.</p>
+
+      <div class="grid" style="margin-top:16px">
+        <article class="card">
+          <img src="setting.png" alt="IIT-JEE">
+          <h4>JEE (Main + Advanced)</h4>
+          <p class="muted">Comprehensive syllabus coverage, advanced problem solving and mock tests.</p>
+        </article>
+
+        <article class="card">
+          <img src="engineering.png" alt="JEE Main">
+          <h4>JEE (Main)</h4>
+          <p class="muted">Focused practice for JEE Main pattern with conceptual clarity.</p>
+        </article>
+
+        <article class="card">
+          <img src="doctor.png" alt="NEET">
+          <h4>NEET (UG)</h4>
+          <p class="muted">Expert medical faculty, topic-wise tests and dedicated doubt-clearing.</p>
+        </article>
+
+        <article class="card">
+          <img src="career.png" alt="Foundation">
+          <h4>Career Foundation</h4>
+          <p class="muted">Foundation programs for Class 7–10 to build strong basics.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section id="results" class="section container">
+      <h3>Our Results</h3>
+      <div class="results" style="margin-top:12px">
+        <div class="badge">NEET 677</div>
+        <div class="badge">AIIMS Selections</div>
+        <div class="badge">IIT AIR Top 100</div>
+        <div class="muted" style="flex:1">Consistent track record of selections & top ranks. View full results in our Results page.</div>
+      </div>
+    </section>
+
+    <!-- Testimonials (Swiper) -->
+    <section class="section container">
+      <h3>Student & Parent Testimonials</h3>
+      <div class="swiper" id="testiSwiper" style="margin-top:12px">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide testimonials card">
+            <strong>Athrwa's Parents</strong>
+            <p class="muted">“Gurukul Classes provided personalized attention and excellent mentoring. We saw dramatic improvement.”</p>
+          </div>
+          <div class="swiper-slide testimonials card">
+            <strong>Shreejeet's Parents</strong>
+            <p class="muted">“Dedicated teachers, strong practice routine and timely feedback — very satisfied.”</p>
+          </div>
+          <div class="swiper-slide testimonials card">
+            <strong>Onkar's Parents</strong>
+            <p class="muted">“Great study material and consistent guidance helped my child gain confidence.”</p>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!-- Media / Gallery -->
+    <section id="media" class="section container">
+      <h3>In The Media & Gallery</h3>
+      <div class="grid" style="margin-top:12px">
+        <div class="card"><img src="WhatsApp Image 2025-01-20 at 12.20.24_36282dc5.jpg" alt="media 1"></div>
+        <div class="card"><img src="WhatsApp Image 2025-01-20 at 12.20.24_aac5efd8.jpg" alt="media 2"></div>
+        <div class="card"><img src="WhatsApp Image 2025-01-20 at 12.20.25_f57bf8c9.jpg" alt="media 3"></div>
+        <div class="card"><img src="marathi copywriting.jpg" alt="media 4"></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section container">
+      <h3>Get in Touch</h3>
+      <div class="grid" style="margin-top:12px;grid-template-columns:1fr 380px">
+        <div>
+          <p class="muted">Fill the form and our counselors will contact you soon.</p>
+
+          <form id="contactForm" aria-label="Contact form">
+            <div class="row-2">
+              <input name="firstName" placeholder="First Name" required />
+              <input name="phone" placeholder="Phone number" required type="tel" />
+            </div>
+            <div class="row-2" style="margin-top:6px">
+              <input name="email" placeholder="Email address" required type="email" />
+              <input name="subject" placeholder="Subject (optional)"/>
+            </div>
+            <textarea name="message" placeholder="Your message..." required></textarea>
+            <div style="display:flex;gap:12px;align-items:center">
+              <button type="submit" class="btn btn-primary">Send Message</button>
+              <div id="formStatus" class="muted" aria-live="polite"></div>
+            </div>
+          </form>
+        </div>
+
+        <aside class="card">
+          <h4>Contact Details</h4>
+          <p><strong>Address:</strong> 1st Floor, Sarda Arcade, Above Canara Bank, Friends Colony, Station Road, Padampura, Chhatrapati Sambhajinagar, 431005</p>
+          <p><strong>Phone:</strong> <a href="tel:+918668689849">+91 86686 89849</a></p>
+          <p><strong>Email:</strong> <a href="mailto:gurukulclasses57@gmail.com">gurukulclasses57@gmail.com</a></p>
+          <p><strong>Website:</strong> <a href="https://www.gurukulclassesiit.co.in/">gurukulclassesiit.co.in</a></p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid" style="align-items:center">
+      <div>
+        <h4>Gurukul Classes</h4>
+        <small class="muted">NEET | IIT-JEE | Foundation</small>
+      </div>
+
+      <div>
+        <p><strong>Follow Us</strong></p>
+        <p>
+          <a href="https://www.facebook.com/gurukulclassesiit/" target="_blank" rel="noopener">Facebook</a> ·
+          <a href="https://www.instagram.com/girisirsgurukulclasses/" target="_blank" rel="noopener">Instagram</a> ·
+          <a href="https://www.youtube.com/@gurukulcareeravenue8932" target="_blank" rel="noopener">YouTube</a>
+        </p>
+      </div>
+
+      <div>
+        <p><strong>Quick Links</strong></p>
+        <p><a href="#courses">Courses</a> · <a href="#results">Results</a> · <a href="#contact">Contact</a></p>
+      </div>
+
+      <div>
+        <small>&copy; 2025 Gurukul Classes — Designed by Finsoft Digital</small>
+      </div>
+    </div>
+  </footer>
+
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <!-- JavaScript -->
-  <script src="DION.js"></script>
-  </html>
-  <!---about us -->
-  <section class="testimonals">
 
-<head>
-    
-</head>
-  <section>
-    <b>Testimonals</b>
-   
-
-    <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-
-    <!-- Custom CSS -->
-    <style>
-    </style>
-</head>
-<body>
-
-<div class="testimonial-container">
-    <div id="testimonial-slider" class="owl-carousel owl-theme">
-        
-        <!-- Testimonial Slide 1 -->
-        <div class="testimonial">
-            <h3>Athrwa Parentes</h3>
-            <p>Gurukul Classes has been an excellent choice for my child's education, offering personalized attention, thorough teaching methods, and a motivating environment. As a mother, I highly recommend it for building both academic excellence and confidence!.</p>
-        </div>
-
-        <!-- Testimonial Slide 2 -->
-        <div class="testimonial">
-            <h3>Shreejeet 
-              Parents</h3>
-            <p>"Shreejeet has truly flourished at Gurukul Classes, thanks to their dedicated teachers and personalized guidance. Their focus on conceptual clarity and consistent feedback has made a remarkable difference in his academic confidence and performance!".</p>
-        </div>
-
-        <!-- Testimonial Slide 3 -->
-        <div class="testimonial">
-            <h3>Onkar Deshpande 
-              Parents</h3>
-            <p>"Onkar has shown incredible progress since joining Gurukul Classes. The teachers' unwavering support, structured approach, and excellent study materials have significantly boosted his confidence and academic performance!".</p>
-        </div>
-
-    </div>
-</div>
-
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Owl Carousel JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-<script>
-    $(document).ready(function(){
-        $('#testimonial-slider').owlCarousel({
-            items: 1, // Show one testimonial at a time
-            loop: true, // Infinite loop
-            autoplay: true, // Auto-slide
-            autoplayTimeout: 5000, // Slide every 5 seconds
-            autoplayHoverPause: false // Do not pause on hover
-        });
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navList = document.getElementById('navList');
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!expanded));
+      if (navList.style.display === 'flex') navList.style.display = 'none';
+      else navList.style.display = 'flex';
+      navList.style.flexDirection = 'column';
     });
-</script>
 
-</section>
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $('#testimonial-slider').owlCarousel({
-            items:1,
-            itemsDesktop:[1000,1],
-            itemsDesktopSmall:[979,1],
-            itemsTablet:[768,1],
-            pagination: false,
-            navigation:true,
-            navigationText:["",""],
-            slideSpeed:1000,
-            autoPlay:true
-        });
+    // Main hero/gallery swiper
+    const mainSwiper = new Swiper('#mainSwiper', {
+      slidesPerView: 1,
+      spaceBetween: 14,
+      loop: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      autoplay: { delay: 3000, disableOnInteraction: false },
+      breakpoints: { 700: { slidesPerView: 2 }, 1000: { slidesPerView: 3 } }
     });
-</script>
+
+    // Testimonials swiper
+    const testiSwiper = new Swiper('#testiSwiper', {
+      slidesPerView: 1,
+      loop: true,
+      autoplay: { delay: 4500, disableOnInteraction: false },
+      pagination: { el: '#testiSwiper .swiper-pagination', clickable: true }
+    });
+
+    // Contact form submit (replace FORM_ENDPOINT with real endpoint)
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formStatus.textContent = 'Sending...';
+      const data = Object.fromEntries(new FormData(contactForm).entries());
+
+      try {
+        const resp = await fetch('FORM_ENDPOINT', { // REPLACE this with your form endpoint (Google Apps Script / server)
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(data)
+        });
+
+        if (!resp.ok) throw new Error('Network error');
+        formStatus.textContent = 'Message sent — we will contact you soon.';
+        contactForm.reset();
+      } catch (err) {
+        console.error(err);
+        formStatus.textContent = 'Error sending message. Try again later.';
+      }
+    });
+  </script>
 </body>
 </html>
-  </section>
-  <section class="Media">
-    <h1>Gurukul classes&nbsp;
-      <span class="cs-text">In Media Coverage</span>
-  </h1>
-    <div class="row">
-            <div class="Media-col">
-              <img src="WhatsApp Image 2025-01-20 at 12.20.24_36282dc5.jpg">
-              <div class="layer">
-              </div>
-            </div>
-            <div class="Media-col">
-              <img src="WhatsApp Image 2025-01-20 at 12.20.24_aac5efd8.jpg">
-              <div class="layer">
-            
-              </div>
-            </div>
-            <div class="Media-col">
-              <img src="WhatsApp Image 2025-01-20 at 12.20.25_f57bf8c9.jpg">
-              <div class="layer">
-
-              </div>
-            </div>
-            <div class="Media-col">
-              <img src="WhatsApp Image 2025-01-20 at 12.20.26_a77ec8e1.jpg">
-              <div class="layer">
-             
-              </div>
-            </div>
-            <div class="Media-col">
-              <img src="WhatsApp Image 2025-01-20 at 12.20.26_4a0f0d5a.jpg">
-              <div class="layer">
-              </div>
-            </div>
-            <div class="Media-col">
-              <img src="marathi copywriting.jpg">
-              <div class="layer">
-              </div>
-            </div>
-</section>
-<section class="Gallery">
-  <h1>Gurukul classes&nbsp;
-    <span class="cs-text">Gallery</span>
-</h1>
-<div class="row">
-  <div class="row">
-    <div class="Media-col-lo">
-      <img src="IMG_6202 copy.JPG">
-      <div class="layer">
-      </div>
-    </div>
-    <div class="Media-col-lo">
-      <img src="IMG_4553.JPG">
-      <div class="layer">
-      </div>
-    </div>
-    <div class="Media-col-lo">
-      <img src="IMG_4560.JPG">
-      <div class="layer">
-      </div>
-    </div>
-    <div class="Media-col-lo">
-      <img src="Jee-Adv. Group photo-2015.jpg">
-      <div class="layer">
-      </div>
-    </div>
-    <div class="Media-col-lo">
-      <img src="DSC_0062.JPG">
-      <div class="layer">
-      </div>
-    </div>
-</body>
-</html>
-  </section>
-  <section class="Information">
-    <h1>Our Classes</h1>
-   </section>
-   <div class="information-back">
-    <p></p>
-    <div class="contact_us_6">
-      <div class="responsive-container-block container">
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    margin: 0px;
-                }
-                .input, .textinput {
-                    width: 100%;
-                    padding: 10px;
-                    margin-bottom: 10px;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                }
-                .submit-btn {
-                    padding: 10px;
-                    background-color: #28a745;
-                    color: white;
-                    border: none;
-                    border-radius: 4px;
-                    cursor: pointer;
-                }
-                .submit-btn:hover {
-                    background-color: #218838;
-                }
-                .response-message {
-                    margin-top: 10px;
-                }
-            </style>
-        </head>
-        <body>
-        
-        <div class="information-back">
-            
-            <div class="contact_us_6">
-              <div class="responsive-container-block container">
-                <form id="contact-form">
-                  <div class="container-block form-wrapper">
-                    <div class="mob-text">
-                      <p class="text-blk contactus-head">Get in Touch</p>
-                      <p class="text-blk contactus-subhead"></p>
-                    </div>
-                    <div class="responsive-container-block" id="i2cbk">
-                      <div class="responsive-cell-block" id="i10mt-3">
-                        <p class="text-blk input-title">FIRST NAME</p>
-                        <input class="input" id="ijowk-3" name="FirstName" placeholder="Please enter first name..." required>
-                      </div>
-                      <div class="responsive-cell-block" id="ip1yp">
-                        <p class="text-blk input-title">EMAIL</p>
-                        <input class="input" id="ipmgh-3" name="Email" placeholder="Please enter email..." required type="email">
-                      </div>
-                      <div class="responsive-cell-block" id="ih9wi">
-                        <p class="text-blk input-title">PHONE NUMBER</p>
-                        <input class="input" id="imgis-3" name="PhoneNumber" placeholder="Please enter phone number..." required type="tel">
-                      </div>
-                      <div class="responsive-cell-block" id="i634i-3">
-                        <p class="text-blk input-title">WHAT DO YOU HAVE IN MIND?</p>
-                        <textarea class="textinput" id="i5vyy-3" name="Message" placeholder="Please enter query..." required></textarea>
-                      </div>
-                    </div>
-                    <button type="submit" class="submit-btn">Submit</button>
-                  </div>
-                </form>
-                <div id="response-message" class="response-message"></div>
-              </div>
-            </div>
-        </div>
-        
-        <script>
-        // JavaScript code to handle form submission
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-        
-            const formData = new FormData(this);
-            const data = {};
-            
-            formData.forEach((value, key) => {
-                data[key] = value; // Convert FormData to a regular object
-            });
-        
-            fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', { // Replace with your Google Apps Script URL
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('response-message').innerText = 'Your message has been sent successfully!';
-                document.getElementById('contact-form').reset(); // Reset the form
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                document.getElementById('response-message').innerText = 'There was an error sending your message.';
-            });
-        });
-        </script>
-        </body>
-        </section>
-        
-  
-        
-     <!--FONT AWESOME-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<!--GOOGLE FONTS-->
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
-</head>
-<body>
-  
-<footer>
-    <Address> 
-      <p>Address:</p>
-      <p style="color: aliceblue; font-size: 15px;">"1st Floor Sarda Arcade,
-       Above Canara Bank,
-      Friends Colony,
-      Station Road, Padampura 
-      chattrapati Sambhajinagar"</p>
-      <p style="color: aliceblue;">Phone No :8668689849</p>
-      <p style="color: aliceblue;">Email : gurukulclasses57@gmail.com</p>
-      <p style="color: aliceblue;">Website: www.gurukulclassesiit.in</p>
-
-    </Address>
-   
-<div class="footer">
-<div class="row-w">
-  
-  <p>Follow Us:</p>
-<a href="https://www.facebook.com/gurukulclassesiit/"><i class="fa fa-facebook"></i></a>
-<a href="https://www.instagram.com/girisirsgurukulclasses/"><i class="fa fa-instagram"></i></a>
-<a href="https://www.youtube.com/@gurukulcareeravenue8932"><i class="fa fa-youtube"></i></a>
-
-</div>
-
-
-<div class="row-w">
-<ul>
-<li><a href="#">Contact us</a></li>
-<li><a href="#">Our Services</a></li>
-<li><a href="#">Privacy Policy</a></li>
-<li><a href="#">Terms & Conditions</a></li>
-<li><a href="#">Career</a></li>
-</ul>
-</div>
-
-<div class="row-w">
-Giri Sirs Gurukulclasses Copyright &copy; 2025  - All rights reserved || Designed By: Finsoft Digital 
-</div>
-</div>
-
-</footer>
