@@ -218,9 +218,8 @@
       <a href="#"><img src="gurukul.png" width="220" height="60"></a>
       <div class="nav-links" id="navLinks">
         <i class="bi bi-x-circle-fill" onclick="hideMenu()"></i>
-        <ul class="nav-list" id="navList">
-<!-- Place inside your <nav> near logo -->
-<button class="menu-toggle" aria-label="Toggle Menu" onclick="toggleMenu()">☰</button>
+     <!-- Inside your <nav>, add hamburger button before nav-links -->
+<button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">&#9776;</button>
 
 <div class="nav-links" id="navLinks">
   <ul class="nav-list">
@@ -240,92 +239,67 @@
         <li><a href="carrer.htm">Career Foundation</a></li>
       </ul>
     </li>
-    <!-- add other menu items like Admission, Class Test, Result similarly -->
+    <!-- more menu items -->
     <li><a href="Contact.htm">Contact Us</a></li>
   </ul>
 </div>
 
-<!-- Add this CSS to your styles -->
 <style>
-  /* Hide mobile menu button by default and nav-links normally */
+/* Hamburger toggle button - hidden on desktop */
+.menu-toggle {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
   .menu-toggle {
-    display: none;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 28px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
+    display: block;
   }
   .nav-links {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 250px;
+    height: 100vh;
+    background: white;
     transition: right 0.3s ease;
+    box-shadow: -3px 0 5px rgba(0,0,0,0.3);
+    z-index: 9999;
+    overflow-y: auto;
+  }
+  .nav-links.open {
+    right: 0;
   }
   .dropdown-content {
     display: none;
   }
-  /* Desktop dropdown on hover */
-  .dropdown:hover > .dropdown-content {
+  .dropdown-content.show {
     display: block;
-    position: absolute;
-    background: white;
   }
-
-  /* Mobile styles */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: block;
-    }
-    .nav-links {
-      position: fixed;
-      top: 0;
-      right: -260px;
-      width: 250px;
-      height: 100vh;
-      background: white;
-      padding-top: 60px;
-      box-shadow: -3px 0 6px rgba(0,0,0,0.3);
-      overflow-y: auto;
-      z-index: 9999;
-    }
-    .nav-links.open {
-      right: 0;
-    }
-    .nav-list {
-      flex-direction: column;
-    }
-    .dropdown-content {
-      position: static;
-      background: #f9f9f9;
-    }
-    .dropdown-content.show {
-      display: block;
-    }
-    /* Disable hover dropdown on mobile (optional) */
-    .dropdown:hover > .dropdown-content {
-      display: none;
-    }
-  }
+}
 </style>
 
-<!-- Add this JS just before closing </body> -->
 <script>
-  // Toggle mobile nav open/close
   function toggleMenu() {
     const nav = document.getElementById('navLinks');
     nav.classList.toggle('open');
   }
 
-  // Toggle dropdown submenu on mobile click
-  function toggleDropdown(event) {
-    event.preventDefault();
-    const submenu = event.target.nextElementSibling;
-    if (!submenu) return;
-    submenu.classList.toggle('show');
+  function toggleDropdown(e) {
+    e.preventDefault();
+    const submenu = e.target.nextElementSibling;
+    if(submenu) submenu.classList.toggle('show');
   }
 </script>
-
-        </ul>
+       </ul>
       </div>
     </nav>
   </section>
@@ -734,5 +708,6 @@
   </script>
 </body>
 </html>
+
 
 
