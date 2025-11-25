@@ -37,7 +37,7 @@
   @media (max-width: 480px) {
     .slideshow-container {
       max-width: 100%;
-      margin: 5px auto;
+      margin: 82px auto;
       padding: 5px;
     }
   
@@ -125,4 +125,5 @@
       margin-bottom: 1px;
       background: #00bcd4;
     }
+
   }
