@@ -66,11 +66,11 @@
             justify-content: center;
             z-index: 1;
     }
-    .nav-list{
-      position: relative;
-      width: 411px;
-      left: -8vh;
-      margin-bottom: 15px;
+     .nav-list {
+        position: relative;
+        width: 486px;
+        left: -17vh;
+        margin-top: -7px;
     }
   }
 
@@ -127,4 +127,5 @@
     }
 
   }
+
 
