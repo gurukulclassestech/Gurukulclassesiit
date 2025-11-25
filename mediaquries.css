@@ -67,10 +67,10 @@
             z-index: 1;
     }
      .nav-list {
-        position: relative;
-        width: 486px;
-        left: -17vh;
-        margin-top: -7px;
+        position: absolute;
+        width: 500px;
+        left: -16vh;
+        margin-top: 11px;
     }
   }
 
@@ -127,5 +127,6 @@
     }
 
   }
+
 
 
