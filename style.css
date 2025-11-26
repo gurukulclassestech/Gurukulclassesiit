@@ -799,7 +799,7 @@ body{
     margin: auto;
     text-align: center;
     font-size: xx-larger;
-    padding-top: 80px;
+    padding-top: 0px;
     margin-top: 31px;
     margin-bottom: -8px;
     background: #00bcd4;
@@ -1617,6 +1617,7 @@ body{
     display: flex;
    }
   }
+
 
 
 
