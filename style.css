@@ -32,21 +32,20 @@ html, body {
 }
 
 .nav-list {
-  list-style: arabic-indic;
-  margin: -27px;
-  padding: 16px;
-  display: flex;
-  font-family: sans-serif;
-  font-size: 13px;
-  flex-wrap: wrap;
-  align-items: center;
-  flex-direction: row;
-  align-content: stretch;
-  margin-left: 66px;
-  justify-content: flex-end;
-  letter-spacing: -0.5px;
+    list-style: arabic-indic;
+    margin: 5px;
+    padding: 15px;
+    display: flex;
+    font-family: sans-serif;
+    font-size: 13px;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    flex-direction: column;
+    align-content: flex-end;
+    margin-left: 66px;
+    justify-content: space-evenly;
+    letter-spacing: -0.5px;
 }
-
 
 .nav-list li {
   position: relative;
@@ -1616,6 +1615,7 @@ body{
     display: flex;
    }
   }
+
 
 
 
