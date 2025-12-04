@@ -67,10 +67,19 @@
             z-index: 1;
     }
      .nav-list {
-        position: absolute;
-        width: 500px;
-        left: -16vh;
-        margin-top: 11px;
+      list-style: arabic-indic;
+    margin: -27px;
+    padding: 16px;
+    display: flex;
+    font-family: sans-serif;
+    font-size: 13px;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    align-content: stretch;
+    margin-left: 66px;
+    justify-content: flex-end;
+    letter-spacing: -0.5px;
     }
   }
 
@@ -127,6 +136,7 @@
     }
 
   }
+
 
 
 
