@@ -213,169 +213,180 @@
   </div>
 
   <!-- ================= HEADER / NAV ================= -->
-  <section class="header">
-  <nav>
-    <span class="menu-btn" onclick="showMenu()">☰</span>
-
-    <a href="#"><img src="gurukul.png" width="220" height="60"></a>
-
-    <div class="nav-links" id="navLinks">
-      <span class="close-btn" onclick="hideMenu()">✖</span>
-
-      <ul class="nav-list">
-        <li><a href="index.htm">Home</a></li>
-
-        <li class="dropdown">
-          <a class="dropbtn">About +</a>
-          <ul class="dropdown-content">
-            <li><a href="About.htm">About Us</a></li>
-            <li><a href="founder.htm">Founder's Message</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropbtn">Course +</a>
-          <ul class="dropdown-content">
-            <li><a href="engg.htm">Engineer</a></li>
-            <li><a href="medical.htm">Medical</a></li>
-            <li><a href="carrer.htm">Career Foundation</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropbtn">Admission +</a>
-          <ul class="dropdown-content">
-            <li><a href="#">Pay Fee</a></li>
-            <li><a href="#">Admission Procedure</a></li>
-            <li><a href="#">Online Application Form</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropbtn">Class Test +</a>
-          <ul class="dropdown-content">
-            <li><a href="#" class="dropbtn">Mock Test +</a></li>
-            <li><a href="mock.htm">11th JEE / NEET Mock Test</a></li>
-            <li><a href="12mook.htm">12th JEE / NEET Mock Test</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropbtn">Result +</a>
-          <ul class="dropdown-content">
-            <li><a href="https://neet.ntaonline.in/frontend/web/scorecard/index">NEET 2024 Result</a></li>
-            <li><a href="https://jeemainsession2.ntaonline.in/frontend/web/scorecard/index">Result JEE Main 2020</a></li>
-            <li><a href="https://cetcell.mahacet.org/">Engineering Students</a></li>
-            <li><a href="https://neet.ntaonline.in/frontend/web/scorecard/index">NEET 2023 Result</a></li>
-            <li><a href="https://mahresult.nic.in/hscjul2024/hscjul2024.htm">12th Board Result 2020</a></li>
-          </ul>
-        </li>
-
-        <li><a href="#">Downloads +</a></li>
-        <li><a href="Contact.htm">Contact Us</a></li>
-      </ul>
-    </div>
-  </nav>
-</section>
-
-<style>
-/* Desktop */
+  <style>
+/* MAIN NAVBAR */
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
 }
 
+/* LOGO */
+nav img {
+    width: 180px;
+}
+
+/* DESKTOP MENU */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links ul li {
+    position: relative;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+}
+
+/* DROPDOWN */
+.dropdown-content {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background: white;
+    display: none;
+    list-style: none;
+    padding: 10px 0;
+    border: 1px solid #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* MOBILE MENU BUTTON */
 .menu-btn {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+}
+
+/* MOBILE SIDEBAR */
+#mobileMenu {
+    width: 250px;
+    background: #ffffff;
+    position: fixed;
+    left: -260px;
+    top: 0;
+    height: 100%;
+    padding: 20px;
+    transition: 0.3s;
+    border-right: 1px solid #ddd;
+    z-index: 999;
+}
+
+#mobileMenu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#mobileMenu ul li {
+    padding: 12px 0;
+}
+
+#mobileMenu ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
 }
 
 .close-btn {
-  display: none;
-  cursor: pointer;
-  font-size: 26px;
+    font-size: 25px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 20px;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-
-  .menu-btn {
-    display: block;
-  }
-
-  nav img {
-    width: 150px;
-  }
-
-  .nav-links {
-    width: 250px;
-    height: 100vh;
-    background: #fff;
-    position: fixed;
-    top: 0;
-    left: -280px;
-    padding-top: 60px;
-    transition: 0.4s;
-    z-index: 999;
-    box-shadow: 2px 0 6px rgba(0,0,0,0.3);
-  }
-
-  .nav-links.show {
-    left: 0;
-  }
-
-  .close-btn {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-
-  .nav-list {
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-  }
-
-  .nav-list li {
-    margin: 15px 0;
-  }
-
-  .dropdown-content {
-    display: none;
-    flex-direction: column;
-    padding-left: 15px;
-  }
-
-  .dropdown.open .dropdown-content {
-    display: flex;
-  }
-
-  .dropbtn {
-    cursor: pointer;
-  }
+/* MEDIA QUERY */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+    .menu-btn {
+        display: block;
+    }
 }
 </style>
 
+</head>
+<body>
+
+<!-- HEADER -->
+<section class="header">
+    <nav>
+        <span class="menu-btn" onclick="openMenu()">☰</span>
+        <a href="#"><img src="gurukul.png"></a>
+
+        <!-- Desktop Menu -->
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.htm">Home</a></li>
+
+                <li class="dropdown">
+                    <a href="#">About +</a>
+                    <ul class="dropdown-content">
+                        <li><a href="About.htm">About Us</a></li>
+                        <li><a href="founder.htm">Founder's Message</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Course +</a>
+                    <ul class="dropdown-content">
+                        <li><a href="engg.htm">Engineer</a></li>
+                        <li><a href="medical.htm">Medical</a></li>
+                        <li><a href="carrer.htm">Career Foundation</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="Contact.htm">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+</section>
+
+<!-- Mobile Sidebar -->
+<div id="mobileMenu">
+    <span class="close-btn" onclick="closeMenu()">✕</span>
+    <ul>
+        <li><a href="index.htm">Home</a></li>
+
+        <li><a href="#">About +</a></li>
+        <li><a href="About.htm">About Us</a></li>
+        <li><a href="founder.htm">Founder's Message</a></li>
+
+        <li><a href="#">Course +</a></li>
+        <li><a href="engg.htm">Engineer</a></li>
+        <li><a href="medical.htm">Medical</a></li>
+        <li><a href="carrer.htm">Career Foundation</a></li>
+
+        <li><a href="Contact.htm">Contact Us</a></li>
+    </ul>
+</div>
+
 <script>
-function showMenu() {
-  document.getElementById("navLinks").classList.add("show");
+function openMenu() {
+    document.getElementById("mobileMenu").style.left = "0";
 }
 
-function hideMenu() {
-  document.getElementById("navLinks").classList.remove("show");
+function closeMenu() {
+    document.getElementById("mobileMenu").style.left = "-260px";
 }
-
-document.querySelectorAll(".dropdown .dropbtn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    btn.parentElement.classList.toggle("open");
-  });
-});
 </script>
-
 
   <!-- ================= TOP HEADER NEWS ================= -->
   <div class="top-header">
@@ -894,6 +905,7 @@ document.querySelectorAll(".dropdown .dropbtn").forEach(btn => {
   </script>
 </body>
 </html>
+
 
 
 
