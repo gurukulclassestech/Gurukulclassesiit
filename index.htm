@@ -276,6 +276,23 @@
 
 <!-- ================= CSS ================= -->
 <style>
+  /* Remove bullets/markers for all lists */
+ul, ol {
+  list-style: none; /* removes default markers */
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Also specifically remove markers for nav lists */
+.nav-list li::marker,
+.dropdown-content li::marker {
+  content: none; /* ensures ::marker pseudo-element is gone */
+}
+
+/* Optional: keep spacing intact for dropdown items */
+.dropdown-content li {
+  margin: 5px 0;
+}
   /* Desktop nav: default */
   .nav-container {
     display: flex;
@@ -319,40 +336,42 @@
 
   /* Mobile styles */
   @media (max-width: 900px) {
-    .nav-list {
-      position: fixed;
-      top: 0;
-      right: -300px; /* hidden */
-      height: 100%;
-      width: 250px;
-      background: #fff;
-      flex-direction: column;
-      padding: 50px 20px;
-      gap: 15px;
-      transition: right 0.3s ease;
-      z-index: 999;
-    }
-
-    .nav-list.open {
-      right: 0; /* show menu */
-    }
-
-    .hamburger {
-      display: block;
-    }
-
-    /* Dropdown on mobile: toggle visibility on click */
-    .dropdown-content {
-      position: static;
-      box-shadow: none;
-      padding-left: 15px;
-    }
-
-    .dropdown > a::after {
-      content: ' ▼';
-      font-size: 12px;
-    }
+  .nav-list {
+    position: fixed;
+    top: 0;
+    right: -300px; /* hidden */
+    height: 100%;
+    width: 250px;
+    background: rgba(53, 200, 226, 0.8); /* transparent white */
+    backdrop-filter: blur(-10px); /* optional, adds blur effect */
+    flex-direction: column;
+    padding: 50px 20px;
+    gap: 15px;
+    transition: right 0.3s ease;
+    z-index: 999;
   }
+
+  .nav-list.open {
+    right: 0; /* show menu */
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Dropdown on mobile: toggle visibility on click */
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    padding-left: 15px;
+    background: transparent; /* keep dropdown transparent too */
+  }
+
+  .dropdown > a::after {
+    content: ' ▼';
+    font-size: 12px;
+  }
+}
 </style>
 
 <!-- ================= JS ================= -->
