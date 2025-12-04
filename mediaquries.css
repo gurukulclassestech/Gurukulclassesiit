@@ -67,21 +67,37 @@
             z-index: 1;
     }
      .nav-list {
-      list-style: arabic-indic;
-    margin: -27px;
-    padding: 16px;
-    display: flex;
-    font-family: sans-serif;
-    font-size: 13px;
-    flex-wrap: wrap;
-    align-items: center;
-    flex-direction: row;
-    align-content: stretch;
-    margin-left: 66px;
-    justify-content: flex-end;
-    letter-spacing: -0.5px;
+      /* Mobile View (max-width: 600px) */
+@media only screen and (max-width: 600px) {
+    .your-list-class {
+        list-style: arabic-indic;
+        margin: 0 !important;
+        padding: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column; /* Stack items on mobile */
+        align-items: flex-start;
+        justify-content: flex-start;
+        font-size: 12px;
+        letter-spacing: 0;
     }
-  }
+}
+
+/* Tablet View (600px – 900px) */
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .your-list-class {
+        list-style: arabic-indic;
+        margin: 10px;
+        padding: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+    }
+}
+
 
 
 @media (max-width:700px){
@@ -136,6 +152,7 @@
     }
 
   }
+
 
 
 
