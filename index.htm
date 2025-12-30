@@ -1,1172 +1,625 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic / Required -->
-  <meta charset="UTF-8">
-  <meta name="google-site-verification" content="I_5RBHTxSwSZscMFtAzUE9IGiE3sGWBiQ1voHv6Qeeg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<meta charset="UTF-8">
+<title>Media Gallery | Gurukul Classes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Primary SEO -->
-  <title>Gurukul Classes</title>
-  <meta name="description" content="Gurukul Classes - Best NEET, JEE Main & Advanced coaching institute in Chhatrapati Sambhajinagar (Aurangabad). Expert faculty, proven results, foundation & online classes. Join for top Medical & Engineering entrance preparation.">
-  <meta name="keywords" content="Gurukul NEET Coaching in Chhatrapati Sambhajinagar, Gurukul JEE Coaching in Aurangabad, Best IIT Coaching Institute Aurangabad, NEET classes Sambhajnagar, JEE Advanced coaching Aurangabad, Gurukul Classes IIT NEET">
-  <link rel="canonical" href="https://www.gurukulclassesiit.co.in/">
+<style>
+:root{
+  --primary:#25d366;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --bg:#f9fafb;
+  --white:#ffffff;
+  --border:#e5e7eb;
+  --shadow:0 4px 20px rgba(0,0,0,0.1);
+}
 
-  <!-- Open Graph / Social -->
-  <meta property="og:site_name" content="Gurukul Classes IIT & NEET">
-  <meta property="og:title" content="Best NEET &amp; JEE Coaching in Aurangabad - Gurukul Classes">
-  <meta property="og:description" content="Top coaching for NEET & IIT-JEE in Chhatrapati Sambhajinagar (Aurangabad). Experienced faculty, excellent results.">
-  <meta property="og:url" content="https://www.gurukulclassesiit.co.in/">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://www.gurukulclassesiit.co.in/gurukul.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Gurukul Classes - NEET & JEE Coaching Aurangabad">
-  <meta name="twitter:description" content="Gurukul Classes - Best NEET, JEE Main & Advanced coaching institute in Chhatrapati Sambhajinagar (Aurangabad).">
-  <meta name="twitter:image" content="https://www.gurukulclassesiit.co.in/gurukul.png">
+*{box-sizing:border-box;margin:0;padding:0}
 
-  <!-- Local / Geo -->
-  <meta name="geo.region" content="IN-MH">
-  <meta name="geo.placename" content="Chhatrapati Sambhajinagar, Aurangabad">
-  <meta name="geo.position" content="19.8762;75.3433">
-  <meta name="ICBM" content="19.8762, 75.3433">
+body{
+  font-family:'Poppins',Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  scroll-behavior:smooth;
+  line-height:1.6;
+}
 
-  <!-- Favicons & CSS -->
-  <link rel="shortcut icon" type="image/x-icon" href="Giri Siri’s.png">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="mediaquries.css">
+/* HEADER - Fully Responsive */
+header{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:var(--shadow);
+}
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:1rem 2%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  font-size:clamp(1.2rem,3vw,1.5rem);
+  font-weight:700;
+  color:var(--primary);
+}
+.menu{
+  display:flex;
+  gap:2rem;
+  align-items:center;
+}
+.menu a{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:500;
+  padding:0.5rem 1rem;
+  border-radius:8px;
+  transition:all 0.3s ease;
+}
+.menu a:hover{
+  background:rgba(37,211,102,0.1);
+  color:var(--primary);
+}
+.hamburger{
+  display:none;
+  font-size:1.8rem;
+  cursor:pointer;
+  background:none;
+  border:none;
+  padding:0.5rem;
+  color:var(--text);
+}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play:wght@400;700&display=swap" rel="stylesheet"> 
+/* HERO SECTION */
+.hero{
+  text-align:center;
+  padding:4rem 2%;
+  background:linear-gradient(135deg,var(--white) 0%,#f0fdf4 100%);
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--primary),transparent);
+}
+.hero h1{
+  font-size:clamp(2rem,6vw,4rem);
+  margin-bottom:1rem;
+  background:linear-gradient(45deg,var(--primary),#128C7E);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero p{
+  color:var(--muted);
+  font-size:1.1rem;
+  max-width:600px;
+  margin:0 auto;
+}
 
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+/* TABS - Responsive */
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:1rem;
+  margin:3rem 2% 2rem;
+  flex-wrap:wrap;
+}
+.tab{
+  padding:1rem 1.5rem;
+  border:2px solid var(--border);
+  border-radius:50px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:0.95rem;
+  background:var(--white);
+  transition:all 0.3s ease;
+  white-space:nowrap;
+}
+.tab.active{
+  background:var(--primary);
+  color:#fff;
+  border-color:var(--primary);
+  transform:translateY(-2px);
+  box-shadow:0 8px 25px rgba(37,211,102,0.3);
+}
+.tab:hover:not(.active){
+  border-color:var(--primary);
+  transform:translateY(-1px);
+}
 
-  <!-- Owl Carousel CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+/* SECTION */
+.section{
+  max-width:1300px;
+  margin:0 auto 4rem;
+  padding:0 2%;
+  animation:fadeUp 0.8s ease;
+  display:none;
+}
+.section.active{
+  display:block;
+}
+.count{
+  font-size:0.9rem;
+  color:var(--muted);
+  margin-bottom:1.5rem;
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+}
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+/* PHOTO GRID - Perfect Responsive */
+.photo-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:1.5rem;
+  padding:1rem 0;
+}
+.photo-item{
+  position:relative;
+  overflow:hidden;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:var(--shadow);
+  transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+  aspect-ratio:1;
+}
+.photo-item:hover{
+  transform:translateY(-12px) scale(1.02);
+  box-shadow:0 25px 50px rgba(0,0,0,0.2);
+}
+.photo-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  cursor:pointer;
+  transition:all 0.4s ease;
+}
+.photo-item:hover img{
+  transform:scale(1.1);
+}
+.photo-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(45deg,rgba(37,211,102,0.9),rgba(18,140,126,0.9));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  transition:all 0.3s ease;
+}
+.photo-item:hover .photo-overlay{
+  opacity:1;
+}
+.photo-overlay i{
+  font-size:2rem;
+  color:#fff;
+}
 
-  <!-- Facebook Pixel -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1580499269998648');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1580499269998648&ev=PageView&noscript=1"
-  /></noscript>
+/* VIDEO GRID */
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:2rem;
+  padding:1rem 0;
+}
+.video-card{
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:all 0.3s ease;
+}
+.video-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+.video-container{
+  position:relative;
+  height:220px;
+  overflow:hidden;
+}
+.video-card iframe,
+.video-card video{
+  width:100%;
+  height:100%;
+  border:none;
+}
+.video-info{
+  padding:1.5rem;
+}
+.video-info h3{
+  font-size:1.1rem;
+  margin-bottom:0.5rem;
+  color:var(--text);
+}
+.video-info p{
+  color:var(--muted);
+  font-size:0.9rem;
+}
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "EducationalOrganization",
-        "name": "Gurukul Classes",
-        "url": "https://www.gurukulclassesiit.co.in/",
-        "logo": "https://www.gurukulclassesiit.co.in/gurukul.png",
-        "sameAs": [
-          "https://www.facebook.com/gurukulclassesiit/",
-          "https://www.instagram.com/girisirsgurukulclasses/",
-          "https://www.youtube.com/@gurukulcareeravenue8932"
-        ],
-        "description": "Gurukul Classes - NEET & JEE coaching institute in Chhatrapati Sambhajinagar (Aurangabad) offering NEET, JEE Main & Advanced and foundation courses."
-      },
-      {
-        "@type": "LocalBusiness",
-        "name": "Gurukul Classes",
-        "image": "https://www.gurukulclassesiit.co.in/gurukul.png",
-        "@id": "https://www.gurukulclassesiit.co.in/",
-        "url": "https://www.gurukulclassesiit.co.in/",
-        "telephone": "+918668689849",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1st Floor, Sarda Arcade, Above Canara Bank, Friends Colony, Station Road, Padampura",
-          "addressLocality": "Chhatrapati Sambhajinagar",
-          "postalCode": "431005",
-          "addressRegion": "Maharashtra",
-          "addressCountry": "IN"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 19.8762,
-          "longitude": 75.3433
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-              "Saturday"
-            ],
-            "opens": "09:00",
-            "closes": "19:00"
-          }
-        ]
-      }
-    ]
+/* VIEW MORE BUTTON */
+.view-more{
+  text-align:center;
+  margin:4rem 0 2rem;
+}
+.view-more button{
+  padding:1rem 3rem;
+  border-radius:50px;
+  background:var(--white);
+  border:2px solid var(--primary);
+  color:var(--primary);
+  font-weight:700;
+  font-size:1rem;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  box-shadow:var(--shadow);
+}
+.view-more button:hover{
+  background:var(--primary);
+  color:#fff;
+  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(37,211,102,0.4);
+}
+
+/* LIGHTBOX - Enhanced */
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.95);
+  z-index:3000;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  padding:2rem;
+}
+.lightbox.active{
+  display:flex;
+}
+.lightbox img{
+  max-width:95vw;
+  max-height:85vh;
+  border-radius:20px;
+  box-shadow:0 25px 75px rgba(0,0,0,0.8);
+  transform:scale(0.8);
+  animation:lightboxZoom 0.4s ease forwards;
+}
+.lightbox-content{
+  margin-top:2rem;
+  text-align:center;
+  color:#fff;
+}
+.lightbox h3{
+  font-size:1.5rem;
+  margin-bottom:0.5rem;
+}
+.lightbox p{
+  opacity:0.9;
+  margin-bottom:1rem;
+}
+.lightbox-close{
+  position:absolute;
+  top:3rem;
+  right:3rem;
+  font-size:3rem;
+  color:#fff;
+  cursor:pointer;
+  width:50px;
+  height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  transition:all 0.3s ease;
+}
+.lightbox-close:hover{
+  background:rgba(255,255,255,0.2);
+  transform:rotate(90deg);
+}
+.lightbox-download{
+  display:inline-block;
+  padding:0.8rem 2rem;
+  background:var(--primary);
+  color:#fff;
+  text-decoration:none;
+  border-radius:50px;
+  font-weight:600;
+  margin-top:1rem;
+  transition:all 0.3s ease;
+}
+.lightbox-download:hover{
+  background:#128C7E;
+  transform:translateY(-2px);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:3rem 2%;
+  font-size:0.95rem;
+  color:var(--muted);
+  border-top:1px solid var(--border);
+  background:var(--white);
+  margin-top:4rem;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lightboxZoom{to{transform:scale(1)}}
+
+/* RESPONSIVE DESIGN - All Devices */
+@media(max-width:1200px){
+  .photo-grid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr));}
+  .video-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+}
+
+@media(max-width:992px){
+  .tabs{flex-direction:column;align-items:center;}
+  .tab{width:200px;}
+  .nav{padding:1rem 5%;}
+}
+
+@media(max-width:768px){
+  .hamburger{display:flex;}
+  .menu{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:80vw;
+    max-width:300px;
+    height:100vh;
+    background:var(--white);
+    flex-direction:column;
+    padding-top:80px;
+    gap:2rem;
+    transition:all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+    box-shadow:-5px 0 30px rgba(0,0,0,0.1);
   }
-  </script>
+  .menu.active{right:0;}
+  .photo-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;}
+  .video-grid{grid-template-columns:1fr;gap:1.5rem;}
+  .hero{padding:3rem 5% 2rem;}
+}
+
+@media(max-width:480px){
+  .photo-grid{grid-template-columns:1fr;}
+  .video-container{height:200px;}
+  .nav{padding:0.8rem 5%;}
+  .logo{font-size:1.1rem;}
+  .tabs .tab{padding:0.8rem 1.2rem;font-size:0.9rem;}
+  .lightbox-close{top:2rem;right:2rem;font-size:2rem;}
+}
+
+@media(max-width:360px){
+  .hero h1{font-size:1.8rem;}
+  .section{padding:0 5%;}
+}
+
+/* High DPI Support */
+@media(-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){
+  .photo-item img{image-rendering:-webkit-optimize-contrast;}
+}
+</style>
 </head>
 
 <body>
-  <!-- ================= POPUP HTML ================= -->
-  <div id="gurukul-popup-overlay" class="popup-overlay">
-    <div class="popup-box">
-      <button class="popup-close" onclick="closeGurukulPopup()">×</button>
-      <img src="Program (2).png" class="popup-img" alt="G-PAT Popup">
-      <a href="https://forms.gle/qHekvrH5JDiPuJvC9" class="popup-btn">Click to Register for G-PAT Scholarship Test</a>
-    </div>
-  </div>
-
-  <!-- ================= HEADER / NAV ================= -->
-  <section class="header">
-    <nav class="nav-container">
-      <a href="#" class="logo"><img src="gurukul.png" alt="Logo"></a>
-      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">☰</button>
-      <ul class="nav-list" id="navList">
-        <li><a href="index.htm">Home</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn">About <i class="fas fa-chevron-down"></i></a>
-          <ul class="dropdown-content">
-            <li><a href="About.htm">About Us</a></li>
-            <li><a href="founder.htm">Founder's Message</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn">Course <i class="fas fa-chevron-down"></i></a>
-          <ul class="dropdown-content">
-            <li><a href="engg.htm">Engineer</a></li>
-            <li><a href="medical.htm">Medical</a></li>
-            <li><a href="carrer.htm">Career Foundation</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn">Admission <i class="fas fa-chevron-down"></i></a>
-          <ul class="dropdown-content">
-            <li><a href="#">Pay Fee</a></li>
-            <li><a href="#">Admission Procedure</a></li>
-            <li><a href="#">Online Application Form</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn">Class Test <i class="fas fa-chevron-down"></i></a>
-          <ul class="dropdown-content">
-            <li><a href="mock.htm">11th JEE / NEET Mock Test</a></li>
-            <li><a href="12mook.htm">12th JEE / NEET Mock Test</a></li>
-            <li><a href="https://nta.ac.in/Quiz">NTA Mock Test</a></li>
-            <li><a href="https://www.mockers.in/exam/neet-mock-test">NEET Mock Test</a></li>
-            <li><a href="https://www.mockers.in/exam/jee-main-mock-test">JEE Mock Test</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn">Result <i class="fas fa-chevron-down"></i></a>
-          <ul class="dropdown-content">
-            <li><a href="https://neet.ntaonline.in/frontend/web/scorecard/index">NEET 2024 Result</a></li>
-            <li><a href="https://jeemainsession2.ntaonline.in/frontend/web/scorecard/index">JEE Main Result</a></li>
-            <li><a href="https://cetcell.mahacet.org/">Engineering Students</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Downloads</a></li>
-        <li><a href="Contact.htm">Contact Us</a></li>
-      </ul>
+<!-- HEADER -->
+<header>
+  <div class="nav">
+    <div class="logo">🧠 Gurukul Classes</div>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <nav class="menu" id="menu">
+      <a href="index.html">🏠 Home</a>
+      <a href="#photos">📸 Photos</a>
+      <a href="#videos">🎥 Videos</a>
+      <a href="index.html#contact">📞 Contact</a>
     </nav>
-  </section>
+  </div>
+</header>
 
-  <!-- ================= TOP HEADER NEWS ================= -->
-  <div class="top-header">
-    <div class="container">
-      <div class="news-content">
-        <i class="fas fa-bullhorn news-icon"></i>
-        <span class="news-text">News Update</span>
-        <marquee class="news-marquee">
-          <a href="https://docs.google.com/forms/d/12lTBN-crryuzbkcXQZ3IjQVgk1JhaydXASczT7rjmuM/edit#responses" target="_blank">Admission Open 2025 GPAT For Class 7th to 10th</a> | 
-          <a href="https://docs.google.com/forms/u/6/d/17WH1rEXbpBEUcG_KlJijHJhSMGTcZW1WUBKUQToqWTI/edit?pli=1" target="_blank">G-PAT Exam Registration 2025</a>
-        </marquee>
+<!-- HERO -->
+<section class="hero">
+  <h1>📷 Media Gallery</h1>
+  <p>Relive the moments from Gurukul Classes - Photos & Videos showcasing our journey of excellence</p>
+</section>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('photos', this)">📸 Photos (5000+)</div>
+  <div class="tab" onclick="switchTab('videos', this)">🎥 Videos (2000+)</div>
+</div>
+
+<!-- PHOTOS SECTION -->
+<section class="section active" id="photos">
+  <div class="count">✨ Selected highlights from Gurukul Classes</div>
+  <div class="photo-grid" id="photoGrid">
+    <!-- Replace these with your actual images -->
+    <div class="photo-item" onclick="openLightbox(this.querySelector('img'), 'Classroom Excellence')">
+      <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=400&fit=crop" alt="Classroom">
+      <div class="photo-overlay">
+        <i class="fas fa-search-plus"></i>
+      </div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(this.querySelector('img'), 'Student Success')">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Students">
+      <div class="photo-overlay">
+        <i class="fas fa-search-plus"></i>
+      </div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(this.querySelector('img'), 'Modern Facilities')">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=400&fit=crop" alt="Lab">
+      <div class="photo-overlay">
+        <i class="fas fa-search-plus"></i>
+      </div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(this.querySelector('img'), 'Teaching Session')">
+      <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=400&fit=crop" alt="Teacher">
+      <div class="photo-overlay">
+        <i class="fas fa-search-plus"></i>
+      </div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(this.querySelector('img'), 'Study Group')">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=400&fit=crop" alt="Group Study">
+      <div class="photo-overlay">
+        <i class="fas fa-search-plus"></i>
+      </div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(this.querySelector('img'), 'Campus Event')">
+      <img src="https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?w=400&h=400&fit=crop" alt="Event">
+      <div class="photo-overlay">
+        <i class="fas fa-search-plus"></i>
       </div>
     </div>
   </div>
-
-  <!-- ================= COMPLETE RESPONSIVE CSS ================= -->
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      overflow-x: hidden;
-    }
-
-    /* Container */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* Navigation - Fully Responsive */
-    .header {
-      background: #fff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .logo img {
-      height: 50px;
-      width: auto;
-    }
-
-    .nav-list {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .nav-list a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s ease;
-      position: relative;
-    }
-
-    .nav-list a:hover {
-      color: #25d366;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: #fff;
-      min-width: 200px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-      border-radius: 8px;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-10px);
-      transition: all 0.3s ease;
-      list-style: none;
-      padding: 1rem;
-      margin: 0;
-    }
-
-    .dropdown:hover .dropdown-content {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .dropdown-content li {
-      margin: 0.5rem 0;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-
-    .dropdown-content a:hover {
-      background: #f8f9fa;
-    }
-
-    .hamburger {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: #333;
-      padding: 0.5rem;
-    }
-
-    /* Top Header News */
-    .top-header {
-      background: linear-gradient(90deg, #25d366, #128C7E);
-      color: white;
-      padding: 0.5rem 0;
-      font-size: 0.9rem;
-      overflow: hidden;
-    }
-
-    .news-content {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .news-icon {
-      font-size: 1.2rem;
-    }
-
-    .news-text {
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .news-marquee {
-      flex: 1;
-      margin-left: 1rem;
-    }
-
-    .news-marquee a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    /* Slideshow */
-    .slideshow-container {
-      position: relative;
-      max-height: 500px;
-      overflow: hidden;
-    }
-
-    .mySlides img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      display: none;
-    }
-
-    .dot {
-      height: 12px;
-      width: 12px;
-      margin: 0 4px;
-      background-color: rgba(0,0,0,0.5);
-      border-radius: 50%;
-      display: inline-block;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .dot.active {
-      background-color: #25d366;
-    }
-
-    /* Notices Board */
-    .notices-board {
-      background: #f8f9fa;
-      padding: 2rem 0;
-    }
-
-    .head-title {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #333;
-    }
-
-    .notices-board-ul {
-      list-style: none;
-    }
-
-    .notices-board-ul li {
-      padding: 0.8rem 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    .notices-board-ul a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-
-    /* Courses Section */
-    .Course {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: #f8f9fa;
-    }
-
-    .Course h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      margin-bottom: 1rem;
-      color: #333;
-    }
-
-    .cs-text {
-      color: #25d366;
-    }
-
-    .row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .course-col {
-      background: white;
-      padding: 2rem;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .course-col:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    }
-
-    .course-col img {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 1rem;
-    }
-
-    .course-col h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #333;
-    }
-
-    /* Facilities */
-    .Campus {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .Campus h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      margin-bottom: 1rem;
-    }
-
-    .Campus-col, .Media-col, .Media-col-lo {
-      position: relative;
-      overflow: hidden;
-      border-radius: 15px;
-      margin-bottom: 2rem;
-      height: 250px;
-    }
-
-    .Campus-col img, .Media-col img, .Media-col-lo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .layer {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(37, 211, 102, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .Campus-col:hover .layer,
-    .Media-col:hover .layer,
-    .Media-col-lo:hover .layer {
-      opacity: 1;
-    }
-
-    /* Results Section */
-    .Result {
-      text-align: center;
-      padding: 2rem;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-    }
-
-    .OUR-RESULT {
-      font-size: 2.5rem;
-      font-weight: 700;
-      display: block;
-    }
-
-    /* Swiper Results Cards */
-    .slide-container {
-      padding: 3rem 1rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-      height: 400px;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-    }
-
-    .card-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 1.5rem;
-      text-align: center;
-    }
-
-    .name {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-      color: #333;
-    }
-
-    .description {
-      color: #666;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-
-    .button {
-      background: #25d366;
-      color: white;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .button:hover {
-      background: #128C7E;
-      transform: scale(1.05);
-    }
-
-    /* Testimonials */
-    .testimonals {
-      padding: 4rem 2rem;
-      background: #f8f9fa;
-      text-align: center;
-    }
-
-    .testimonals b {
-      font-size: 2.5rem;
-      display: block;
-      margin-bottom: 3rem;
-      color: #333;
-    }
-
-    /* Contact Form */
-    .information-back {
-      padding: 4rem 2rem;
-      background: #fff;
-    }
-
-    .contactus-head {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #333;
-    }
-
-    .input, .textinput {
-      width: 100%;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border: 2px solid #eee;
-      border-radius: 10px;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
-    }
-
-    .input:focus, .textinput:focus {
-      outline: none;
-      border-color: #25d366;
-    }
-
-    .submit-btn {
-      width: 100%;
-      padding: 1rem;
-      background: linear-gradient(45deg, #25d366, #128C7E);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .submit-btn:hover {
-      transform: translateY(-2px);
-    }
-
-    /* WhatsApp Button - Fully Responsive */
-    .whatsapp-float {
-      position: fixed;
-      width: clamp(50px, 6vw, 65px);
-      height: clamp(50px, 6vw, 65px);
-      bottom: clamp(20px, 5vw, 50px);
-      right: clamp(20px, 5vw, 50px);
-      background: linear-gradient(45deg, #25d366, #128C7E);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-      z-index: 10001;
-      animation: whatsapp-bounce 2s infinite;
-      transition: all 0.3s ease;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.15) rotate(5deg);
-      box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
-    }
-
-    .whatsapp-float img {
-      width: 70%;
-      height: 70%;
-      filter: brightness(0) invert(1);
-    }
-
-    @keyframes whatsapp-bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0) scale(1); }
-      40% { transform: translateY(-12px) scale(1.05); }
-      60% { transform: translateY(-6px) scale(1.02); }
-    }
-
-    /* Footer */
-    footer {
-      background: #333;
-      color: white;
-      padding: 3rem 2rem 1rem;
-    }
-
-    .footer {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .row-w {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-bottom: 2rem;
-      justify-content: space-between;
-    }
-
-    .row-w ul {
-      display: flex;
-      list-style: none;
-      gap: 1.5rem;
-    }
-
-    .row-w a {
-      color: #ccc;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .row-w a:hover {
-      color: #25d366;
-    }
-
-    /* Popup */
-    .popup-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: rgba(0,0,0,0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 99999;
-      padding: 1rem;
-    }
-
-    .popup-box {
-      background: #fff;
-      border-radius: 20px;
-      max-width: 90vw;
-      max-height: 90vh;
-      overflow: hidden;
-      animation: popupScale 0.4s ease;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-    }
-
-    .popup-img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-
-    .popup-close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: #ff4757;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: none;
-      color: #fff;
-      font-size: 1.2rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .popup-btn {
-      display: block;
-      background: linear-gradient(45deg, #25d366, #128C7E);
-      color: #fff;
-      padding: 1.2rem;
-      text-align: center;
-      font-size: 1.1rem;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    @keyframes popupScale {
-      from { transform: scale(0.7); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    /* RESPONSIVE BREAKPOINTS */
-    /* Large Desktop */
-    @media (min-width: 1400px) {
-      .container { max-width: 1400px; }
-    }
-
-    /* Desktop */
-    @media (max-width: 1200px) {
-      .nav-container { padding: 1rem 1.5rem; }
-      .row { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-    }
-
-    /* Tablet Landscape */
-    @media (max-width: 1024px) {
-      .nav-list { gap: 1.5rem; }
-      .dropdown-content { min-width: 180px; }
-    }
-
-    /* Tablet Portrait */
-    @media (max-width: 900px) {
-      .hamburger { display: block; }
-      .nav-list {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 280px;
-        background: rgba(255,255,255,0.98);
-        backdrop-filter: blur(20px);
-        flex-direction: column;
-        justify-content: flex-start;
-        padding-top: 6rem;
-        gap: 2rem;
-        transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-      }
-
-      .nav-list.open {
-        right: 0;
-      }
-
-      .dropdown-content {
-        position: static;
-        box-shadow: none;
-        background: rgba(37,211,102,0.1);
-        padding-left: 2rem;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        max-height: 0;
-        overflow: hidden;
-      }
-
-      .dropdown.active .dropdown-content {
-        max-height: 300px;
-        padding: 1rem 0;
-      }
-
-      .news-content { flex-direction: column; gap: 0.5rem; text-align: center; }
-      .news-marquee { order: -1; width: 100%; margin-left: 0; }
-    }
-
-    /* Mobile Landscape */
-    @media (max-width: 768px) {
-      .container { padding: 0 1rem; }
-      .nav-container { padding: 0.8rem 1rem; }
-      .logo img { height: 40px; }
-      .Course, .Campus, .testimonals, .information-back { padding: 2rem 1rem; }
-      .slide-container { padding: 2rem 0.5rem; }
-      .row { grid-template-columns: 1fr; gap: 1.5rem; }
-    }
-
-    /* Mobile Portrait */
-    @media (max-width: 480px) {
-      .mySlides img { height: 250px; }
-      .head-title { font-size: 1.5rem; }
-      .OUR-RESULT { font-size: 2rem; }
-      .testimonals b { font-size: 2rem; }
-      .contactus-head { font-size: 1.5rem; }
-      .Course h1, .Campus h1 { font-size: 2rem; }
-    }
-
-    /* Extra Small Devices */
-    @media (max-width: 360px) {
-      .whatsapp-float { width: 50px; height: 50px; bottom: 15px; right: 15px; }
-      .nav-container { padding: 0.5rem; }
-      .logo img { height: 35px; }
-    }
-
-    /* High DPI Displays */
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      .card-img, .Campus-col img { image-rendering: -webkit-optimize-contrast; }
-    }
-
-    /* Landscape Orientation Fix */
-    @media (max-height: 500px) and (orientation: landscape) {
-      .popup-box { max-height: 95vh; }
-      .mySlides img { height: 200px; }
-    }
-  </style>
-
-  <!-- ================= ALL SECTIONS (keeping your original content structure) ================= -->
-  <!-- SLIDESHOW -->
-  <div class="slideshow-container">
-    <div class="mySlides fade">
-      <img src="Your paragraph text (2).png" alt="Banner 1">
-    </div>
-    <div class="mySlides fade">
-      <img src="Your paragraph text.png" alt="Banner 2">
-    </div>
-    <div class="mySlides fade">
-      <img src="Untitled (20 x 29 in) (25 x 35 in) (1366 x 768 px).png" alt="Banner 3">
-    </div>
-    <div class="mySlides fade">
-      <img src="Best Employee (1080 x 768 px).png" alt="Banner 4">
-    </div>
-    <div class="mySlides fade">
-      <img src="Banner.png" alt="Banner 5">
-    </div>
-    <div style="text-align:center; padding: 1rem;">
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-      <span class="dot"></span>
-      <span class="dot"></span>  
-    </div>
+  <div class="view-more">
+    <button onclick="loadMorePhotos()">📸 Load More Photos</button>
   </div>
+</section>
 
-  <!-- NOTICES BOARD -->
-  <div class="notices-board">
-    <div class="container">
-      <h3 class="head-title"><i class="fas fa-bell"></i> Notices Board</h3>
-      <marquee direction="up" height="320px">
-        <ul class="notices-board-ul">
-          <li><i class="fas fa-star"></i> <a href="#">Gurukul Class Test</a></li>
-          <li><i class="fas fa-star"></i> <a href="https://docs.google.com/forms/d/1IrEdahQJUpV5mTkT67J4uUryM3qcQ1rlDVbXtq1hdhs/viewform?edit_requested=true">12th JEE MAINS 1</a></li>
-          <li><i class="fas fa-star"></i> <a href="https://docs.google.com/forms/d/10bdmt3IyFZ-ThvkWfl8UQm7f_zCMsV83Zdtgjg_fWB4/viewform?edit_requested=true#settings">JEE Main Practices Test</a></li>
-          <li><i class="fas fa-star"></i> <a href="https://docs.google.com/forms/d/1fLWNLcOF-DtGuw-7zt5RAEh5O6ger8L754ZfuyJ1ark/viewform?edit_requested=true">JEE Advances Practices Test</a></li>
-          <li><i class="fas fa-star"></i> <a href="https://docs.google.com/forms/d/17zh3RsHJJ0i0AucQhLtGl7JzdGSvbU-nZ7tLqHBIAd4/edit#settings">JEE Main/Advanced</a></li>
-          <li><i class="fas fa-star"></i> <a href="https://docs.google.com/forms/d/1FX_wb8gu2mbeqr41gAnOvNdBneoAoeOIoeIO-vShRNw/edit">JEE 11th</a></li>
-          <li><i class="fas fa-star"></i> <a href="https://docs.google.com/forms/d/1sv0Em-UW6Kd3Y-S8ky6yfB9H6YCZAewtgJIDx7FyrF8/edit#responses">JEE 12th</a></li>
-        </ul>
-      </marquee>
+<!-- VIDEOS SECTION -->
+<section class="section" id="videos">
+  <div class="count">🎬 Featured Videos from Gurukul Classes</div>
+  <div class="video-grid">
+    <div class="video-card">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Sample Video 1" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <h3>🎓 Classroom Excellence</h3>
+        <p>Watch our innovative teaching methods in action</p>
+      </div>
     </div>
-  </div>
-
-  <!-- COURSES -->
-  <div class="Course">
-    <div class="container">
-      <h1>Classroom <span class="cs-text">Courses</span></h1>
-      <p>Our Available Courses</p>
-      <div class="row">
-        <div class="course-col">
-          <img src="setting.png" alt="JEE Icon">
-          <h2>JEE (MAIN+ADVANCED) IIT-JEE</h2>
-          <p>Gurukul Classes is equipped with the team of top most faculties for preparation of JEE (Main+Advanced)...</p>
-        </div>
-        <div class="course-col">
-          <img src="engineering.png" alt="JEE Main Icon">
-          <h2>JEE (MAIN)</h2>
-          <p>JEE (Main) courses designed by Kota Classes are unique and are as per the latest examination pattern...</p>
-        </div>
-        <div class="course-col">
-          <img src="doctor.png" alt="NEET Icon">
-          <h2>NEET (UG)</h2>
-          <p>Kota Classes has long been distinguished for the best faculty team of Doctors and IITians...</p>
-        </div>
-        <div class="course-col">
-          <img src="career.png" alt="Career Icon">
-          <h2>Career Foundation</h2>
-          <p>We offer courses for various Competitive Exams and Olympiads for students of classes 9th to 10th...</p>
-        </div>
+    <div class="video-card">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Sample Video 2" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <h3>🏆 Student Success Stories</h3>
+        <p>Real stories from NEET/JEE toppers</p>
+      </div>
+    </div>
+    <div class="video-card">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="Sample Video 3" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <h3>📚 Campus Tour</h3>
+        <p>Explore our world-class facilities</p>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- FACILITIES -->
-  <section class="Campus">
-    <div class="container">
-      <h1>Facilities at Gurukul Classes</h1>
-      <p>World-class infrastructure for excellent learning</p>
-      <div class="row">
-        <div class="Campus-col"><img src="website (7).png" alt="Facility 1"><div class="layer"><h3>Modern Classrooms</h3></div></div>
-        <div class="Campus-col"><img src="website (7).png" alt="Facility 2"><div class="layer"><h3>Library</h3></div></div>
-        <div class="Campus-col"><img src="website (7).png" alt="Facility 3"><div class="layer"><h3>Lab Facilities</h3></div></div>
-        <div class="Campus-col"><img src="website (7).png" alt="Facility 4"><div class="layer"><h3>Counseling</h3></div></div>
-      </div>
-    </div>
-  </section>
+<!-- ENHANCED LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">×</span>
+  <img id="lightboxImg">
+  <div class="lightbox-content">
+    <h3 id="lightboxTitle"></h3>
+    <p id="lightboxText"></p>
+    <a id="downloadLink" class="lightbox-download" download>💾 Download Image</a>
+  </div>
+</div>
 
-  <!-- RESULTS SLIDER -->
-  <section class="Result">
-    <div class="container">
-      <span class="OUR-RESULT">OUR RESULTS</span>
-      <p class="ass">Gurukul's unique Teaching Methodology Continues to deliver quality Results</p>
-    </div>
-  </section>
+<!-- FOOTER -->
+<footer>
+  <div>
+    © 2025 Gurukul Classes - Best NEET & JEE Coaching in Chhatrapati Sambhajinagar<br>
+    <small>📍 Navapute Tower, High Court Colony | 📞 8668689849</small>
+  </div>
+</footer>
 
-  <section class="slider">
-    <div class="slide-container swiper">
-      <div class="slide-content">
-        <div class="card-wrapper swiper-wrapper">
-          <!-- Your existing result cards here - fully responsive -->
-          <div class="card swiper-slide">
-            <div class="image-content">
-              <span class="overlay"></span>
-              <div class="card-image">
-                <img src="YASH RATHI - Copy.JPG" alt="Yash Rathi" class="card-img">
-              </div>
-            </div>
-            <div class="card-content">
-              <h2 class="name">Yash Rathi</h2>
-              <p class="description">NEET 675/720</p>
-              <p class="description">AIIMS-Rushikesh</p>
-              <button class="button">View More</button>
-            </div>
-          </div>
-          <!-- Add all your other cards similarly -->
-        </div>
-      </div>
-      <div class="swiper-button-next swiper-navBtn"></div>
-      <div class="swiper-button-prev swiper-navBtn"></div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- TESTIMONIALS, MEDIA, GALLERY, CONTACT FORM - All fully responsive with same structure -->
-  <!-- WHATSAPP BUTTON -->
-  <a href="https://wa.me/918668689849?text=Hi%20Gurukul%20Classes!%20Interested%20in%20NEET/JEE%20coaching." class="whatsapp-float" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </a>
+<script>
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("active");
+}
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <address>
-        <p><i class="fas fa-map-marker-alt"></i> Address:</p>
-        <p>Navapute tower - In front of Satara Police Station, High Court Colony, Satara Parisar, Chhatrapati Sambhajinagar</p>
-        <p><i class="fas fa-phone"></i> Phone: 8668689849</p>
-        <p><i class="fas fa-envelope"></i> Email: gurukulclasses57@gmail.com</p>
-        <p><i class="fas fa-globe"></i> Website: www.gurukulclassesiit.in</p>
-      </address>
-      <div class="footer">
-        <div class="row-w">
-          <p>Follow Us:</p>
-          <a href="https://www.facebook.com/gurukulclassesiit/"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/girisirsgurukulclasses/"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@gurukulcareeravenue8932"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="row-w">
-          <ul>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">Our Services</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Career</a></li>
-          </ul>
-        </div>
-        <div class="row-w">
-          <p>Giri Sir's Gurukul Classes Copyright © 2025 - All rights reserved | Designed By: Finsoft Digital</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+function switchTab(tab, el){
+  // Hide all sections
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  // Show selected section
+  document.getElementById(tab).classList.add('active');
+  
+  // Update active tab
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  el.classList.add("active");
+  
+  // Smooth scroll to top
+  document.querySelector('.section.active').scrollIntoView({behavior:'smooth'});
+}
 
-  <!-- SCRIPTS -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+function openLightbox(img, title){
+  const lightbox = document.getElementById("lightbox");
+  document.getElementById("lightboxImg").src = img.src;
+  document.getElementById("lightboxTitle").textContent = title;
+  document.getElementById("lightboxText").textContent = 'Gurukul Classes - Excellence in NEET/JEE Preparation';
+  document.getElementById("downloadLink").href = img.src;
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
 
-  <script>
-    // Mobile Nav Toggle
-    const navList = document.getElementById('navList');
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const dropdowns = document.querySelectorAll('.dropdown');
+function closeLightbox(){
+  document.getElementById("lightbox").classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
 
-    hamburgerBtn.addEventListener('click', () => {
-      navList.classList.toggle('open');
-    });
+// Close lightbox on background click
+document.getElementById("lightbox").onclick = function(e){
+  if(e.target === this) closeLightbox();
+}
 
-    dropdowns.forEach(dropdown => {
-      dropdown.addEventListener('click', (e) => {
-        if (window.innerWidth <= 900) {
-          e.preventDefault();
-          dropdown.classList.toggle('active');
-        }
-      });
-    });
+function loadMorePhotos(){
+  const grid = document.getElementById("photoGrid");
+  const sampleImages = [
+    'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?w=400&h=400&fit=crop'
+  ];
+  
+  for(let i = 0; i < 6; i++){
+    const item = document.createElement("div");
+    item.className = 'photo-item';
+    item.innerHTML = `
+      <img src="${sampleImages[Math.floor(Math.random()*sampleImages.length)]}" alt="Gurukul Photo">
+      <div class="photo-overlay"><i class="fas fa-search-plus"></i></div>
+    `;
+    item.onclick = () => openLightbox(item.querySelector('img'), 'Gurukul Classes Moment');
+    grid.appendChild(item);
+  }
+  
+  // Scroll to bottom
+  grid.scrollIntoView({behavior:'smooth'});
+}
 
-    // Close mobile menu on outside click
-    document.addEventListener('click', (e) => {
-      if (!navList.contains(e.target) && !hamburgerBtn.contains(e.target)) {
-        navList.classList.remove('open');
-        dropdowns.forEach(d => d.classList.remove('active'));
-      }
-    });
+// Close mobile menu when clicking links
+document.querySelectorAll('.menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById("menu").classList.remove("active");
+  });
+});
 
-    // Slideshow
-    let slideIndex = 0;
-    const slides = document.getElementsByClassName("mySlides");
-    const dots = document.getElementsByClassName("dot");
-
-    function showSlides() {
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      for (let i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1; }
-      slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
-    }
-    showSlides();
-    setInterval(showSlides, 3000);
-
-    // Popup
-    function showGurukulPopup() {
-      document.getElementById("gurukul-popup-overlay").style.display = "flex";
-    }
-    function closeGurukulPopup() {
-      document.getElementById("gurukul-popup-overlay").style.display = "none";
-    }
-    window.addEventListener('load', () => setTimeout(showGurukulPopup, 2000));
-
-    // Owl Carousel
-    $(document).ready(function(){
-      $('#testimonial-slider').owlCarousel({
-        items: 1,
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        autoplayHoverPause: true,
-        dots: true,
-        nav: false,
-        responsive: {
-          0: { items: 1 },
-          768: { items: 2 },
-          1024: { items: 3 }
-        }
-      });
-    });
-
-    // Swiper for Results
-    const swiper = new Swiper('.slide-container', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        640: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
-        1400: { slidesPerView: 4 }
-      }
-    });
-
-    // Contact Form
-    document.getElementById('contact-form')?.addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Your form submission logic here
-      alert('Thank you! Your message has been sent successfully.');
-      this.reset();
-    });
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-  </script>
+// Keyboard navigation for lightbox
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape') closeLightbox();
+});
+</script>
 </body>
 </html>
