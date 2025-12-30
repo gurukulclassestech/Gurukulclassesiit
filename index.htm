@@ -47,10 +47,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
-  <!-- Font Awesome 6 (NEW - for WhatsApp icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Font Awesome 4 (existing) -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Extra Google fonts -->
@@ -131,9 +128,8 @@
   }
   </script>
 
-  <!-- ================= ORIGINAL POPUP CSS + NEW WHATSAPP CSS ================= -->
+  <!-- ================= POPUP CSS ================= -->
   <style>
-    /* ORIGINAL POPUP CSS (unchanged) */
     .popup-overlay {
       position: fixed;
       top: 0;
@@ -156,7 +152,10 @@
       animation: popupScale 0.3s ease;
       box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     }
-    .popup-img { width: 100%; border-radius: 12px 12px 0 0; }
+    .popup-img {
+      width: 100%;
+      border-radius: 12px 12px 0 0;
+    }
     .popup-close {
       position: absolute;
       top: -12px;
@@ -182,246 +181,21 @@
       border-radius: 0 0 12px 12px;
       font-weight: bold;
     }
-    .popup-btn:hover { background: #0056b3; }
+    .popup-btn:hover {
+      background: #0056b3;
+    }
     @keyframes popupScale {
       from { transform: scale(0.7); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
-
-    /* ================= NEW ULTRA-RESPONSIVE WHATSAPP BUTTON ================= */
-    .whatsapp-float-enhanced {
-      position: fixed !important;
-      width: 65px !important;
-      height: 65px !important;
-      bottom: 25px !important;
-      right: 25px !important;
-      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
-      border: 3px solid rgba(255,255,255,0.3) !important;
-      border-radius: 50% !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      text-decoration: none !important;
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4) !important;
-      z-index: 100001 !important;
-      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-      backdrop-filter: blur(10px) !important;
-    }
-
-    .whatsapp-float-enhanced:hover {
-      transform: translateY(-8px) scale(1.1) !important;
-      box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6) !important;
-      background: linear-gradient(135deg, #128C7E 0%, #25D366 100%) !important;
-    }
-
-    .whatsapp-float-enhanced:active {
-      transform: scale(0.95) !important;
-    }
-
-    .whatsapp-float-enhanced i {
-      font-size: 32px !important;
-      color: white !important;
-      transition: all 0.2s ease !important;
-    }
-
-    .whatsapp-float-enhanced:hover i {
-      transform: scale(1.15) rotate(10deg) !important;
-    }
-
-    /* ================= WHATSAPP POPUP (NEW) ================= */
-    .whatsapp-popup-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: rgba(0,0,0,0.85);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 100000;
-      padding: 20px;
-      backdrop-filter: blur(5px);
-    }
-
-    .whatsapp-popup-overlay.active {
-      display: flex !important;
-    }
-
-    .whatsapp-popup-box {
-      background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
-      border-radius: 25px;
-      max-width: 450px;
-      width: 95%;
-      max-height: 85vh;
-      overflow: hidden;
-      box-shadow: 0 25px 50px rgba(37, 211, 102, 0.3);
-      animation: whatsappPopupSlide 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      position: relative;
-      border: 2px solid rgba(37, 211, 102, 0.2);
-    }
-
-    .whatsapp-popup-close {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      background: rgba(255,255,255,0.9);
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      font-size: 24px;
-      color: #666;
-      cursor: pointer;
-      z-index: 10;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-
-    .whatsapp-popup-close:hover {
-      background: #ff4757;
-      color: white;
-      transform: rotate(90deg);
-    }
-
-    .whatsapp-popup-content {
-      padding: 60px 30px 40px;
-      text-align: center;
-    }
-
-    .whatsapp-icon-large {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, #25D366, #128C7E);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-    }
-
-    .whatsapp-icon-large i {
-      font-size: 40px;
-      color: white;
-    }
-
-    .whatsapp-popup-content h3 {
-      color: #2c3e50;
-      font-size: 26px;
-      margin: 0 0 15px;
-      font-weight: 700;
-    }
-
-    .whatsapp-popup-content p {
-      color: #7f8c8d;
-      font-size: 16px;
-      margin: 0 0 20px;
-    }
-
-    .whatsapp-popup-content ul {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0;
-      text-align: left;
-    }
-
-    .whatsapp-popup-content ul li {
-      padding: 8px 0;
-      color: #2c3e50;
-      font-size: 15px;
-      position: relative;
-      padding-left: 30px;
-    }
-
-    .whatsapp-popup-content ul li:before {
-      content: "✅";
-      position: absolute;
-      left: 0;
-      font-size: 18px;
-    }
-
-    .whatsapp-start-chat {
-      display: inline-block;
-      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-      color: white !important;
-      padding: 18px 40px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 600;
-      margin: 20px 0;
-      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-      transition: all 0.3s ease;
-      border: none;
-    }
-
-    .whatsapp-start-chat:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
-      color: white !important;
-      text-decoration: none;
-    }
-
-    .whatsapp-later {
-      background: transparent;
-      color: #7f8c8d;
-      border: 2px solid #e1e8ed;
-      padding: 12px 30px;
-      border-radius: 25px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      width: 100%;
-      font-weight: 500;
-    }
-
-    .whatsapp-later:hover {
-      background: #f8f9fa;
-      color: #2c3e50;
-      transform: translateY(-1px);
-    }
-
-    @keyframes whatsappPopupSlide {
-      0% { 
-        opacity: 0; 
-        transform: translateY(50px) scale(0.9); 
-      }
-      100% { 
-        opacity: 1; 
-        transform: translateY(0) scale(1); 
-      }
-    }
-
-    /* RESPONSIVE BREAKPOINTS */
-    @media (max-width: 768px) {
-      .whatsapp-float-enhanced {
-        width: 60px !important;
-        height: 60px !important;
-        bottom: 20px !important;
-        right: 20px !important;
-      }
-      .whatsapp-float-enhanced i { font-size: 28px !important; }
-    }
-
     @media (max-width: 480px) {
-      .whatsapp-float-enhanced {
-        width: 55px !important;
-        height: 55px !important;
-        bottom: 15px !important;
-        right: 15px !important;
+      .popup-box {
+        max-width: 95%;
       }
-      .whatsapp-float-enhanced i { font-size: 26px !important; }
-    }
-
-    @media (max-width: 360px) {
-      .whatsapp-float-enhanced {
-        width: 50px !important;
-        height: 50px !important;
-        bottom: 12px !important;
-        right: 12px !important;
+      .popup-btn {
+        font-size: 14px;
+        padding: 10px;
       }
-      .whatsapp-float-enhanced i { font-size: 24px !important; }
     }
   </style>
 </head>
@@ -429,7 +203,7 @@
 <body>
   <meta name="google-site-verification" content="aee24f05TjUQn8yQ1w-OX6G2jt-k0RO5f3V1IenDj5I" />
 
-  <!-- ================= ORIGINAL G-PAT POPUP ================= -->
+  <!-- ================= POPUP HTML ================= -->
   <div id="gurukul-popup-overlay" class="popup-overlay">
     <div class="popup-box">
       <button class="popup-close" onclick="closeGurukulPopup()">×</button>
@@ -438,39 +212,19 @@
     </div>
   </div>
 
-  <!-- ================= NEW WHATSAPP POPUP ================= -->
-  <div id="whatsappPopupOverlay" class="whatsapp-popup-overlay">
-    <div class="whatsapp-popup-box">
-      <button class="whatsapp-popup-close" id="whatsappCloseBtn">×</button>
-      <div class="whatsapp-popup-content">
-        <div class="whatsapp-icon-large">
-          <i class="fab fa-whatsapp"></i>
-        </div>
-        <h3>🚀 Start Your Success Journey!</h3>
-        <p>Chat instantly with our counselors for:</p>
-        <ul>
-          <li>✅ NEET/JEE Course details & fees</li>
-          <li>✅ G-PAT Scholarship information</li>
-          <li>✅ Admission process & dates</li>
-          <li>✅ Mock test schedules</li>
-        </ul>
-        <a href="https://wa.me/918668689849?text=Hi%20Gurukul%20Classes!%20Please%20share%20details%20about%20NEET/JEE%20courses%20and%20G-PAT%20scholarship." 
-           class="whatsapp-start-chat" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-whatsapp"></i> Start WhatsApp Chat Now
-        </a>
-        <button class="whatsapp-later" id="whatsappLaterBtn">Maybe Later</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ================= ALL YOUR ORIGINAL CONTENT (UNCHANGED) ================= -->
-  <!-- HEADER / NAV -->
+  <!-- ================= HEADER / NAV ================= -->
   <section class="header">
     <nav class="nav-container">
+      <!-- Logo -->
       <a href="#"><img src="gurukul.png" width="220" height="60" alt="Logo"></a>
+
+      <!-- Hamburger button (only mobile) -->
       <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">☰</button>
+
+      <!-- Navigation Links -->
       <ul class="nav-list" id="navList">
         <li><a href="index.htm">Home</a></li>
+
         <li class="dropdown">
           <a href="#" class="dropbtn">About +</a>
           <ul class="dropdown-content">
@@ -478,6 +232,7 @@
             <li><a href="founder.htm">Founder's Message</a></li>
           </ul>
         </li>
+
         <li class="dropdown">
           <a href="#" class="dropbtn">Course +</a>
           <ul class="dropdown-content">
@@ -486,64 +241,652 @@
             <li><a href="carrer.htm">Career Foundation</a></li>
           </ul>
         </li>
-        <!-- ... ALL your other nav items ... -->
+
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Admission +</a>
+          <ul class="dropdown-content">
+            <li><a href="#">Pay Fee</a></li>
+            <li><a href="#">Admission Procedure</a></li>
+            <li><a href="#">Online Application Form</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Class Test +</a>
+          <ul class="dropdown-content">
+            <li><a href="mock.htm">11th JEE / NEET Mock Test</a></li>
+            <li><a href="12mook.htm">12th JEE / NEET Mock Test</a></li>
+            <li><a href="https://nta.ac.in/Quiz"> NTA Mock Test</a></li>
+            <li><a href="https://www.mockers.in/exam/neet-mock-test"> NEET Mock Test</a></li>
+             <li><a href="https://www.mockers.in/exam/jee-main-mock-test"> JEE Mock Test</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Result +</a>
+          <ul class="dropdown-content">
+            <li><a href="https://neet.ntaonline.in/frontend/web/scorecard/index">NEET 2024 Result</a></li>
+            <li><a href="https://jeemainsession2.ntaonline.in/frontend/web/scorecard/index">Result JEE Main 2020</a></li>
+            <li><a href="https://cetcell.mahacet.org/">Engineering Students</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">Downloads +</a></li>
         <li><a href="Contact.htm">Contact Us</a></li>
       </ul>
     </nav>
   </section>
 
-  <!-- ALL YOUR OTHER SECTIONS (top-header, slideshow, notices, courses, etc.) -->
-  <!-- ... EXACTLY as you had them ... -->
+  <!-- ================= NAV CSS ================= -->
+  <style>
+    /* Remove bullets/markers for all lists */
+    ul, ol {
+      list-style: none; /* removes default markers */
+      padding-left: 0;
+      margin: 0;
+    }
 
-  <!-- ================= NEW ENHANCED WHATSAPP FLOATING BUTTON ================= -->
-  <a href="https://wa.me/918668689849?text=Hi%20Gurukul%20Classes!%20I%20want%20to%20know%20more%20about%20NEET/JEE%20courses%20and%20admissions." 
-     class="whatsapp-float-enhanced" 
-     target="_blank" 
-     rel="noopener noreferrer"
-     aria-label="Chat with Gurukul Classes on WhatsApp (8668689849)">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+    /* Also specifically remove markers for nav lists */
+    .nav-list li::marker,
+    .dropdown-content li::marker {
+      content: none; /* ensures ::marker pseudo-element is gone */
+    }
 
-  <!-- ================= ALL YOUR ORIGINAL FOOTER ================= -->
-  <footer>
-    <!-- ... your exact footer content ... -->
-  </footer>
+    /* Optional: keep spacing intact for dropdown items */
+    .dropdown-content li {
+      margin: 5px 0;
+    }
 
-  <!-- ================= ALL YOUR ORIGINAL SCRIPTS + NEW WHATSAPP SCRIPT ================= -->
+    /* Desktop nav: default */
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-list {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav-list li a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      list-style: none;
+      background: #fff;
+      margin-top: 5px;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Hamburger button (mobile only) */
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 900px) {
+    .nav-list {
+      position: fixed;
+      top: 0;
+      right: -300px; /* hidden */
+      height: 100%;
+      width: 250px;
+      background: rgba(53, 200, 226, 0.8); /* transparent white */
+      backdrop-filter: blur(-10px); /* optional, adds blur effect */
+      flex-direction: column;
+      padding: 50px 20px;
+      gap: 15px;
+      transition: right 0.3s ease;
+      z-index: 999;
+    }
+
+    .nav-list.open {
+      right: 0; /* show menu */
+    }
+
+    .hamburger {
+      display: block;
+    }
+
+    /* Dropdown on mobile: toggle visibility on click */
+    .dropdown-content {
+      position: static;
+      box-shadow: none;
+      padding-left: 15px;
+      background: transparent; /* keep dropdown transparent too */
+    }
+
+    .dropdown > a::after {
+      content: ' ▼';
+      font-size: 12px;
+    }
+    }
+  </style>
+
+  <!-- ================= NAV JS ================= -->
   <script>
-    /* ORIGINAL NAV SCRIPT */
     const navList = document.getElementById('navList');
     const hamburgerBtn = document.getElementById('hamburgerBtn');
+
     hamburgerBtn.addEventListener('click', () => {
       navList.classList.toggle('open');
     });
+
+    // Optional: close menu on clicking outside
     document.addEventListener('click', function(e){
       if(!navList.contains(e.target) && !hamburgerBtn.contains(e.target)){
         navList.classList.remove('open');
       }
     });
+  </script>
 
-    /* ORIGINAL G-PAT POPUP */
-    function showGurukulPopup() {
-      document.getElementById("gurukul-popup-overlay").style.display = "flex";
-    }
-    function closeGurukulPopup() {
-      document.getElementById("gurukul-popup-overlay").style.display = "none";
+  <!-- ================= TOP HEADER NEWS ================= -->
+  <div class="top-header">
+    <div class="container">
+      <div class="width-1">
+        <b class="news-list">News Update</b>
+        <marquee class="quote" onmouseout="start()" onmousemove="stop()"> 
+          <img src="index.gif">
+          <a href="https://docs.google.com/forms/d/12lTBN-crryuzbkcXQZ3IjQVgk1JhaydXASczT7rjmuM/edit#responses" target="_blank" style="color: white;">Admission Open 2025 GPAT For Class 7th to 10th</a> 
+          <img src="index.gif">
+          <img src="index.gif">
+          <a href="https://docs.google.com/forms/u/6/d/17WH1rEXbpBEUcG_KlJijHJhSMGTcZW1WUBKUQToqWTI/edit?pli=1" target="_blank" style="color: white;">G-PAT Exam Registration 2025</a> 
+          <img src="index.gif">
+        </marquee>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SLIDESHOW ================= -->
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="Your paragraph text (2).png" style="width: 100%;">
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="Your paragraph text.png" style="width: 100%;">
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="Untitled (20 x 29 in) (25 x 35 in) (1366 x 768 px).png" style="width: 100%;">
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="Best Employee (1080 x 768 px).png" style="width: 100%;">
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="Banner.png" style="width: 150%;">
+    </div>
+    
+
+    <div style="text-align:center">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span>
+      <span class="dot"></span>  
+    </div>
+  </div>
+
+  <!-- ================= NOTICES ================= -->
+  <div class="width-100"></div>
+  <div class="notices-board">
+    <div class="heading-sect"> 
+      <h3 class="head-title"><img src="001-bell.png"> Notics Board</h3>
+    </div>
+    <marquee width="100%" direction="up" height="320px" onmouseout="start()" onmousemove="stop()">
+      <ul class="notices-board-ul">
+        <li><img src="index.gif"><a href="#">Gurukul Class Test</a></li>
+        <li><img src="index.gif"><a href="https://docs.google.com/forms/d/1IrEdahQJUpV5mTkT67J4uUryM3qcQ1rlDVbXtq1hdhs/viewform?edit_requested=true">12th JEE MAINS 1</a></li>
+        <li><img src="index.gif"><a href="https://docs.google.com/forms/d/10bdmt3IyFZ-ThvkWfl8UQm7f_zCMsV83Zdtgjg_fWB4/viewform?edit_requested=true#settings">JEE Main Practices Test</a></li>
+        <li><img src="index.gif"><a href="https://docs.google.com/forms/d/1fLWNLcOF-DtGuw-7zt5RAEh5O6ger8L754ZfuyJ1ark/viewform?edit_requested=true">JEE Advances Practices Test</a></li>
+        <li><img src="index.gif"><a href="https://docs.google.com/forms/d/17zh3RsHJJ0i0AucQhLtGl7JzdGSvbU-nZ7tLqHBIAd4/edit#settings">JEE Main/Advanced</a></li>
+        <li><img src="index.gif"><a href="https://docs.google.com/forms/d/1FX_wb8gu2mbeqr41gAnOvNdBneoAoeOIoeIO-vShRNw/edit">JEE 11th</a></li>
+        <li><img src="index.gif"><a href="https://docs.google.com/forms/d/1sv0Em-UW6Kd3Y-S8ky6yfB9H6YCZAewtgJIDx7FyrF8/edit#responses">JEE 12th</a></li>
+      </ul>
+    </marquee>
+  </div>
+
+  <!-- ================= COURSES ================= -->
+  <div class="Course">
+    <h1>Classroom&nbsp;<span class="cs-text">Courses</span></h1>
+    <p>Our Available Courses</p>
+  </div>
+  <div class="row">
+    <div class="course-col"><img src="setting.png" class="center">
+      <h2>JEE (MAIN+ADVANCED) IIT-JEE</h2>
+      <p>Gurukul Classes is equipped with the team of top most faculties for preparation of JEE (Main+Advanced)...</p>
+    </div>
+    <div class="course-col"><img src="engineering.png" class="center">
+      <h2>JEE (MAIN)</h2>
+      <p>JEE (Main) courses designed by Kota Classes are unique and are as per the latest examination pattern...</p>
+    </div>
+    <div class="course-col"><img src="doctor.png" class="center">
+      <h2>NEET (UG)</h2>
+      <p>Kota Classes has long been distinguished for the best faculty team of Doctors and IITians which Individual Care for NEET and AIIMS preparing aspirants......</p>
+    </div>
+    <div class="course-col"><img src="career.png" class="center">
+      <h2>Career Foundation</h2>
+      <p>We offer courses for various Competitive Exams and Olympiads for the students of classes 9th to 10th...</p>
+    </div>
+  </div>
+
+  <!-- ================= FACILITIES ================= -->
+  <section class="Campus">
+    <h1>Facilities at Gurukul Classes</h1>
+    <p>.........</p>
+    <div class="row">
+      <div class="Campus-col"><img src="website (7).png"><div class="layer"><h3>.</h3></div></div>
+      <div class="Campus-col"><img src="website (7).png"><div class="layer"><h3>.</h3></div></div>
+      <div class="Campus-col"><img src="website (7).png"><div class="layer"><h3>.</h3></div></div>
+      <div class="Campus-col"><img src="website (7).png"><div class="layer"><h3>.</h3></div></div>
+    </div>
+  </section>
+
+  <!-- ================= RESULTS SLIDER ================= -->
+  <section class="Result">
+    <b class="OUR-RESULT">OUR RESULTS</b>
+    <p class="ass">Gurukul's unique Teaching Methodology Continues to deliver quality Results.....</p>
+  </section>    
+
+  <section class="slider">
+    <div class="slide-container swiper">
+      <div class="slide-content">
+        <div class="card-wrapper swiper-wrapper">
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="YASH RATHI - Copy.JPG" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Yash Rathi</h2>
+              <p class="description">NEET 675 out of 720</p>
+              <p class="description">AIIMS-Rushikesh.</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="Picture3.png" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Suyash Kulkarani</h2>
+              <p class="description">NEET 656 out of 720</p>
+              <p class="description">AIIMS-Bhopal.</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="athrwa.jpg" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Athrva Nandapurkar</h2>
+              <p class="description">AIR 3 </p>
+              <p class="description">IIT Mumbai</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="Picture4.png" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Anas Ali</h2>
+              <p class="description">NEET 659 out of 720</p>
+              <p class="description">KEM-Mumbai</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="UTKARSH ZAWAR - Copy.JPG" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Utkarsh Zawar</h2>
+              <p class="description">NEET 677 out of 720.</p>
+              <p class="description">AIIMS-Jaitapur.</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="unnamed.png" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Ruchita Kulkarni</h2>
+              <p class="description">NEET 619 out of 720.</p>
+              <p class="description">Goverment Medical College.</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="aas.png" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Shraddha Darbeshwar</h2>
+              <p class="description">NEET 620 out of 720.</p>
+              <p class="description">Goverment Medical College.</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="35 Shreejeet Golhait.jpg" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Shreejeet Golhait</h2>
+              <p class="description">AIR 35 IN IIT.</p>
+              <p class="description">IIT Delhi</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="Rishikesh.jpg" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Rishikesh Banker</h2>
+              <p class="description">AIR 97 IN IIT.</p>
+              <p class="description">IIT- Mumbai.</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next swiper-navBtn"></div>
+      <div class="swiper-button-prev swiper-navBtn"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section class="testimonals">
+    <b>Testimonals</b>
+    <div class="testimonial-container">
+      <div id="testimonial-slider" class="owl-carousel owl-theme">
+        <div class="testimonial">
+          <h3>Athrwa Parentes</h3>
+          <p>Gurukul Classes has been an excellent choice for my child's education, offering personalized attention, thorough teaching methods, and a motivating environment. As a mother, I highly recommend it for building both academic excellence and confidence!.</p>
+        </div>
+        <div class="testimonial">
+          <h3>Shreejeet Parents</h3>
+          <p>"Shreejeet has truly flourished at Gurukul Classes, thanks to their dedicated teachers and personalized guidance. Their focus on conceptual clarity and consistent feedback has made a remarkable difference in his academic confidence and performance!".</p>
+        </div>
+        <div class="testimonial">
+          <h3>Onkar Deshpande Parents</h3>
+          <p>"Onkar has shown incredible progress since joining Gurukul Classes. The teachers' unwavering support, structured approach, and excellent study materials have significantly boosted his confidence and academic performance!".</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MEDIA COVERAGE ================= -->
+  <section class="Media">
+    <h1>Gurukul classes&nbsp;<span class="cs-text">In Media Coverage</span></h1>
+    <div class="row">
+      <div class="Media-col"><img src="WhatsApp Image 2025-01-20 at 12.20.24_36282dc5.jpg"><div class="layer"></div></div>
+      <div class="Media-col"><img src="WhatsApp Image 2025-01-20 at 12.20.24_aac5efd8.jpg"><div class="layer"></div></div>
+      <div class="Media-col"><img src="WhatsApp Image 2025-01-20 at 12.20.25_f57bf8c9.jpg"><div class="layer"></div></div>
+      <div class="Media-col"><img src="WhatsApp Image 2025-01-20 at 12.20.26_a77ec8e1.jpg"><div class="layer"></div></div>
+      <div class="Media-col"><img src="WhatsApp Image 2025-01-20 at 12.20.26_4a0f0d5a.jpg"><div class="layer"></div></div>
+      <div class="Media-col"><img src="marathi copywriting.jpg"><div class="layer"></div></div>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY ================= -->
+  <section class="Gallery">
+    <h1>Gurukul classes&nbsp;<span class="cs-text">Gallery</span></h1>
+    <div class="row">
+      <div class="Media-col-lo"><img src="IMG_6202 copy.JPG"><div class="layer"></div></div>
+      <div class="Media-col-lo"><img src="IMG_4553.JPG"><div class="layer"></div></div>
+      <div class="Media-col-lo"><img src="IMG_4560.JPG"><div class="layer"></div></div>
+      <div class="Media-col-lo"><img src="Jee-Adv. Group photo-2015.jpg"><div class="layer"></div></div>
+      <div class="Media-col-lo"><img src="DSC_0062.JPG"><div class="layer"></div></div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT / INFORMATION ================= -->
+  <section class="Information">
+    <h1>Our Classes</h1>
+  </section>
+
+  <div class="information-back">
+    <div class="contact_us_6">
+      <div class="responsive-container-block container">
+        <style>
+          .input, .textinput {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          }
+          .submit-btn {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+          .submit-btn:hover {
+            background-color: #218838;
+          }
+          .response-message {
+            margin-top: 10px;
+          }
+        </style>
+
+        <form id="contact-form">
+          <div class="container-block form-wrapper">
+            <div class="mob-text">
+              <p class="text-blk contactus-head">Get in Touch</p>
+              <p class="text-blk contactus-subhead"></p>
+            </div>
+            <div class="responsive-container-block" id="i2cbk">
+              <div class="responsive-cell-block" id="i10mt-3">
+                <p class="text-blk input-title">FIRST NAME</p>
+                <input class="input" id="ijowk-3" name="FirstName" placeholder="Please enter first name..." required>
+              </div>
+              <div class="responsive-cell-block" id="ip1yp">
+                <p class="text-blk input-title">EMAIL</p>
+                <input class="input" id="ipmgh-3" name="Email" placeholder="Please enter email..." required type="email">
+              </div>
+              <div class="responsive-cell-block" id="ih9wi">
+                <p class="text-blk input-title">PHONE NUMBER</p>
+                <input class="input" id="imgis-3" name="PhoneNumber" placeholder="Please enter phone number..." required type="tel">
+              </div>
+              <div class="responsive-cell-block" id="i634i-3">
+                <p class="text-blk input-title">WHAT DO YOU HAVE IN MIND?</p>
+                <textarea class="textinput" id="i5vyy-3" name="Message" placeholder="Please enter query..." required></textarea>
+              </div>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+          </div>
+        </form>
+        <div id="response-message" class="response-message"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= WHATSAPP FLOATING BUTTON ================= -->
+<!-- Official WhatsApp Floating Button -->
+<a href="https://wa.me/918668689849"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+    alt="WhatsApp Chat">
+</a>
+  <!-- ================= WHATSAPP FLOATING BUTTON CSS ================= -->
+  <style>
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 10000;
+      animation: whatsapp-bounce 2s infinite;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
     }
 
-    /* ORIGINAL SLIDESHOW */
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+      transform: scale(1.1);
+      box-shadow: 2px 2px 10px #999;
+    }
+
+    .whatsapp-icon {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    @keyframes whatsapp-bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 480px) {
+      .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 28px;
+      }
+    }
+  </style>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <address> 
+      <p>Address:</p>
+      <p style="color: aliceblue; font-size: 15px;">
+        Navapute tower - In front of Satara Police Station 
+        High Court Colony , Satara Parisar.
+        Chattrapati Sambhajinagar
+      </p>
+      <p style="color: aliceblue;">Phone No :8668689849</p>
+      <p style="color: aliceblue;">Email : gurukulclasses57@gmail.com</p>
+      <p style="color: aliceblue;">Website: www.gurukulclassesiit.in</p>
+    </address>
+    <div class="footer">
+      <div class="row-w">
+        <p>Follow Us:</p>
+        <a href="https://www.facebook.com/gurukulclassesiit/"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.instagram.com/girisirsgurukulclasses/"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@gurukulcareeravenue8932"><i class="fa fa-youtube"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+      <div class="row-w">
+        <ul>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Career</a></li>
+        </ul>
+      </div>
+      <div class="row-w">
+        Giri Sirs Gurukulclasses Copyright &copy; 2025
+        - All rights reserved || Designed By: Finsoft Digital 
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+
+  <!-- Nav menu script -->
+  <script>
+    let navLinks = document.getElementById("navLinks");
+    function showMenu() { navLinks.style.right = "0"; }
+    function hideMenu() { navLinks.style.right = "-250px"; }
+  </script>
+
+  <!-- Slideshow script -->
+  <script>
     let slideIndex = 0;
     function showSlides() {
       const slides = document.getElementsByClassName("mySlides");
       const dots = document.getElementsByClassName("dot");
+
       for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
+
       slideIndex++;
       if (slideIndex > slides.length) slideIndex = 1;
+
       for (let i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
       }
+
       slides[slideIndex - 1].style.display = "block";
       if (dots[slideIndex - 1]) {
         dots[slideIndex - 1].className += " active";
@@ -551,66 +894,53 @@
     }
     showSlides();
     setInterval(showSlides, 2000);
-
-    /* ================= NEW ENHANCED WHATSAPP SCRIPT ================= */
-    document.addEventListener('DOMContentLoaded', function() {
-      const whatsappPopup = document.getElementById('whatsappPopupOverlay');
-      const whatsappCloseBtn = document.getElementById('whatsappCloseBtn');
-      const whatsappLaterBtn = document.getElementById('whatsappLaterBtn');
-
-      // Show G-PAT popup at 1 second (original)
-      setTimeout(showGurukulPopup, 1000);
-
-      // Show WhatsApp popup at 8 seconds (NEW - session controlled)
-      setTimeout(() => {
-        if (!sessionStorage.getItem('whatsappPopupShown')) {
-          whatsappPopup.classList.add('active');
-          sessionStorage.setItem('whatsappPopupShown', 'true');
-        }
-      }, 8000);
-
-      // WhatsApp popup close events
-      whatsappCloseBtn.addEventListener('click', () => {
-        whatsappPopup.classList.remove('active');
-      });
-      
-      whatsappLaterBtn.addEventListener('click', () => {
-        whatsappPopup.classList.remove('active');
-      });
-
-      // Close on outside click
-      whatsappPopup.addEventListener('click', function(e) {
-        if (e.target === whatsappPopup) {
-          whatsappPopup.classList.remove('active');
-        }
-      });
-
-      // Track WhatsApp clicks (optional)
-      document.querySelectorAll('.whatsapp-float-enhanced, .whatsapp-start-chat').forEach(btn => {
-        btn.addEventListener('click', function() {
-          console.log('WhatsApp clicked - Great lead generation!');
-          // Add your analytics here if needed
-        });
-      });
-    });
-
-    /* ORIGINAL jQuery & Owl Carousel */
-    // ... your existing jQuery and Owl scripts ...
   </script>
 
-  <!-- Original external scripts -->
+  <!-- Popup script -->
+  <script>
+    function showGurukulPopup() {
+      document.getElementById("gurukul-popup-overlay").style.display = "flex";
+    }
+    function closeGurukulPopup() {
+      document.getElementById("gurukul-popup-overlay").style.display = "none";
+    }
+    window.addEventListener('load', function () {
+      setTimeout(showGurukulPopup, 1000);
+    });
+  </script>
+
+  <!-- jQuery & Owl Carousel -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('#testimonial-slider').owlCarousel({
+        items:1,
+        loop:true,
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:false,
+        pagination:false,
+        navigation:true,
+        navText:["",""],
+        slideSpeed:1000
+      });
+    });
+  </script>
+
+  <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Your Swiper init in DION.js -->
   <script src="DION.js"></script>
 
-  <!-- Contact form script (original) -->
+  <!-- Contact form submit -->
   <script>
     document.getElementById('contact-form')?.addEventListener('submit', function(event) {
       event.preventDefault();
       const formData = new FormData(this);
       const data = {};
       formData.forEach((value, key) => { data[key] = value; });
+
       fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
         method: 'POST',
         body: JSON.stringify(data),
@@ -629,3 +959,4 @@
   </script>
 </body>
 </html>
+
