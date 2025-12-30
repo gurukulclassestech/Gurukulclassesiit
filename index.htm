@@ -39,7 +39,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -50,6 +49,10 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Extra Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
 
   <!-- Facebook Pixel -->
   <script>
@@ -125,297 +128,73 @@
   }
   </script>
 
-  <!-- ENHANCED POPUP & WHATSAPP CSS -->
+  <!-- ================= POPUP CSS ================= -->
   <style>
-    /* ================= ENHANCED WHATSAPP FLOATING BUTTON ================= */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-      border-radius: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-      z-index: 10001;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .whatsapp-float:hover {
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
-      background: linear-gradient(135deg, #128c7e 0%, #25d366 100%);
-    }
-
-    .whatsapp-float svg {
-      width: 28px;
-      height: 28px;
-      color: white;
-      transition: transform 0.3s ease;
-    }
-
-    .whatsapp-float:hover svg {
-      transform: scale(1.1) rotate(10deg);
-    }
-
-    .whatsapp-label {
-      position: absolute;
-      bottom: -30px;
-      right: 0;
-      background: #25d366;
-      color: white;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      white-space: nowrap;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(37, 211, 102, 0.4);
-    }
-
-    .whatsapp-float:hover .whatsapp-label {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ================= ENHANCED POPUP BUTTON ================= */
-    .popup-trigger-btn {
-      background: linear-gradient(135deg, #ff6b6b, #f7931e);
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 10000;
-      animation: pulse 2s infinite;
-    }
-
-    .popup-trigger-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
-    }
-
-    .popup-trigger-btn svg {
-      transition: transform 0.3s ease;
-    }
-
-    .popup-trigger-btn:hover svg {
-      transform: scale(1.1);
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4); }
-      50% { box-shadow: 0 4px 25px rgba(255, 107, 107, 0.7); }
-      100% { box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4); }
-    }
-
-    /* ================= ENHANCED POPUP ================= */
     .popup-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.75);
+      background: rgba(0,0,0,0.7);
       display: none;
       justify-content: center;
       align-items: center;
       z-index: 99999;
-      padding: 20px;
-      backdrop-filter: blur(5px);
+      padding: 10px;
     }
-
-    .popup-overlay.active {
-      display: flex;
-    }
-
     .popup-box {
       position: relative;
-      background: white;
-      border-radius: 20px;
-      max-width: 90%;
-      max-height: 90vh;
-      width: 100%;
+      background: #fff;
+      border-radius: 12px;
       max-width: 500px;
-      animation: popupSlideIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
+      width: 100%;
+      animation: popupScale 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     }
-
     .popup-img {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 20px 20px 0 0;
+      border-radius: 12px 12px 0 0;
     }
-
     .popup-close {
       position: absolute;
-      top: 15px;
-      right: 15px;
-      background: rgba(255, 0, 0, 0.9);
-      width: 40px;
-      height: 40px;
+      top: -12px;
+      right: -12px;
+      background: #ff0000;
+      width: 35px;
+      height: 35px;
       border-radius: 50%;
       border: none;
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
+      color: #fff;
+      font-size: 22px;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
-      transition: all 0.3s ease;
-      z-index: 1;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
     }
-
-    .popup-close:hover {
-      background: #dc3545;
-      transform: scale(1.1);
-    }
-
-    .popup-content {
-      padding: 25px;
-      text-align: center;
-    }
-
-    .popup-title {
-      font-size: 24px;
-      font-weight: 700;
-      margin: 0 0 15px 0;
-      color: #1a1a1a;
-    }
-
     .popup-btn {
       display: block;
-      background: linear-gradient(135deg, #007bff, #0056b3);
-      color: white;
-      padding: 16px 30px;
+      background: #007bff;
+      color: #fff;
+      padding: 12px 15px;
       text-align: center;
       font-size: 16px;
-      font-weight: 600;
       text-decoration: none;
-      border-radius: 12px;
-      margin-top: 20px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+      border-radius: 0 0 12px 12px;
+      font-weight: bold;
     }
-
     .popup-btn:hover {
-      background: linear-gradient(135deg, #0056b3, #004085);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+      background: #0056b3;
     }
-
-    @keyframes popupSlideIn {
-      0% {
-        opacity: 0;
-        transform: scale(0.7) translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
+    @keyframes popupScale {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
-
-    /* Responsive Breakpoints */
-    @media (max-width: 768px) {
-      .whatsapp-float {
-        width: 56px;
-        height: 56px;
-        bottom: 16px;
-        right: 16px;
-      }
-      
-      .whatsapp-float svg {
-        width: 24px;
-        height: 24px;
-      }
-      
-      .whatsapp-label {
-        display: none;
-      }
-
-      .popup-trigger-btn {
-        top: 80px;
-        right: 16px;
-        padding: 10px 20px;
-        font-size: 13px;
-      }
-    }
-
     @media (max-width: 480px) {
-      .whatsapp-float {
-        width: 52px;
-        height: 52px;
-        bottom: 12px;
-        right: 12px;
-      }
-      
-      .whatsapp-float svg {
-        width: 22px;
-        height: 22px;
-      }
-
-      .popup-trigger-btn {
-        top: 70px;
-        right: 12px;
-        padding: 10px 16px;
-        font-size: 12px;
-        border-radius: 25px;
-      }
-
       .popup-box {
-        margin: 10px;
-        border-radius: 16px;
+        max-width: 95%;
       }
-      
-      .popup-img {
-        height: 180px;
-      }
-      
-      .popup-content {
-        padding: 20px 15px;
-      }
-      
-      .popup-title {
-        font-size: 20px;
-      }
-      
       .popup-btn {
-        padding: 14px 24px;
-        font-size: 15px;
-      }
-    }
-
-    @media (max-width: 360px) {
-      .whatsapp-float {
-        width: 48px;
-        height: 48px;
-        bottom: 10px;
-        right: 10px;
-      }
-      
-      .whatsapp-float svg {
-        width: 20px;
-        height: 20px;
+        font-size: 14px;
+        padding: 10px;
       }
     }
   </style>
@@ -424,23 +203,12 @@
 <body>
   <meta name="google-site-verification" content="aee24f05TjUQn8yQ1w-OX6G2jt-k0RO5f3V1IenDj5I" />
 
-  <!-- ================= POPUP TRIGGER BUTTON ================= -->
-  <button class="popup-trigger-btn" onclick="showGurukulPopup()" aria-label="G-PAT Scholarship Test">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-    </svg>
-    G-PAT Scholarship
-  </button>
-
-  <!-- ================= ENHANCED POPUP HTML ================= -->
+  <!-- ================= POPUP HTML ================= -->
   <div id="gurukul-popup-overlay" class="popup-overlay">
     <div class="popup-box">
       <button class="popup-close" onclick="closeGurukulPopup()">×</button>
       <img src="Program (2).png" class="popup-img" alt="G-PAT Popup">
-      <div class="popup-content">
-        <h2 class="popup-title">G-PAT Scholarship Test</h2>
-        <a href="https://forms.gle/qHekvrH5JDiPuJvC9" class="popup-btn" target="_blank">Click to Register Now</a>
-      </div>
+      <a href="https://forms.gle/qHekvrH5JDiPuJvC9" class="popup-btn">Click to Register for G-PAT Scholarship Test</a>
     </div>
   </div>
 
@@ -456,6 +224,7 @@
       <!-- Navigation Links -->
       <ul class="nav-list" id="navList">
         <li><a href="index.htm">Home</a></li>
+
         <li class="dropdown">
           <a href="#" class="dropbtn">About +</a>
           <ul class="dropdown-content">
@@ -463,6 +232,7 @@
             <li><a href="founder.htm">Founder's Message</a></li>
           </ul>
         </li>
+
         <li class="dropdown">
           <a href="#" class="dropbtn">Course +</a>
           <ul class="dropdown-content">
@@ -471,6 +241,7 @@
             <li><a href="carrer.htm">Career Foundation</a></li>
           </ul>
         </li>
+
         <li class="dropdown">
           <a href="#" class="dropbtn">Admission +</a>
           <ul class="dropdown-content">
@@ -479,6 +250,7 @@
             <li><a href="#">Online Application Form</a></li>
           </ul>
         </li>
+
         <li class="dropdown">
           <a href="#" class="dropbtn">Class Test +</a>
           <ul class="dropdown-content">
@@ -489,6 +261,7 @@
              <li><a href="https://www.mockers.in/exam/jee-main-mock-test"> JEE Mock Test</a></li>
           </ul>
         </li>
+
         <li class="dropdown">
           <a href="#" class="dropbtn">Result +</a>
           <ul class="dropdown-content">
@@ -497,6 +270,7 @@
             <li><a href="https://cetcell.mahacet.org/">Engineering Students</a></li>
           </ul>
         </li>
+
         <li><a href="#">Downloads +</a></li>
         <li><a href="Contact.htm">Contact Us</a></li>
       </ul>
@@ -507,20 +281,23 @@
   <style>
     /* Remove bullets/markers for all lists */
     ul, ol {
-      list-style: none;
+      list-style: none; /* removes default markers */
       padding-left: 0;
       margin: 0;
     }
 
+    /* Also specifically remove markers for nav lists */
     .nav-list li::marker,
     .dropdown-content li::marker {
-      content: none;
+      content: none; /* ensures ::marker pseudo-element is gone */
     }
 
+    /* Optional: keep spacing intact for dropdown items */
     .dropdown-content li {
       margin: 5px 0;
     }
 
+    /* Desktop nav: default */
     .nav-container {
       display: flex;
       align-items: center;
@@ -552,6 +329,7 @@
       display: block;
     }
 
+    /* Hamburger button (mobile only) */
     .hamburger {
       display: none;
       font-size: 28px;
@@ -560,15 +338,16 @@
       cursor: pointer;
     }
 
+    /* Mobile styles */
     @media (max-width: 900px) {
     .nav-list {
       position: fixed;
       top: 0;
-      right: -300px;
+      right: -300px; /* hidden */
       height: 100%;
       width: 250px;
-      background: rgba(53, 200, 226, 0.8);
-      backdrop-filter: blur(-10px);
+      background: rgba(53, 200, 226, 0.8); /* transparent white */
+      backdrop-filter: blur(-10px); /* optional, adds blur effect */
       flex-direction: column;
       padding: 50px 20px;
       gap: 15px;
@@ -577,18 +356,19 @@
     }
 
     .nav-list.open {
-      right: 0;
+      right: 0; /* show menu */
     }
 
     .hamburger {
       display: block;
     }
 
+    /* Dropdown on mobile: toggle visibility on click */
     .dropdown-content {
       position: static;
       box-shadow: none;
       padding-left: 15px;
-      background: transparent;
+      background: transparent; /* keep dropdown transparent too */
     }
 
     .dropdown > a::after {
@@ -607,6 +387,7 @@
       navList.classList.toggle('open');
     });
 
+    // Optional: close menu on clicking outside
     document.addEventListener('click', function(e){
       if(!navList.contains(e.target) && !hamburgerBtn.contains(e.target)){
         navList.classList.remove('open');
@@ -654,6 +435,7 @@
       <img src="Banner.png" style="width: 150%;">
     </div>
     
+
     <div style="text-align:center">
       <span class="dot"></span> 
       <span class="dot"></span> 
@@ -743,7 +525,6 @@
               <button class="button">View More</button>
             </div>
           </div>
-          <!-- Add all other result cards here (keeping original content) -->
           <div class="card swiper-slide">
             <div class="image-content">
               <span class="overlay"></span>
@@ -758,7 +539,104 @@
               <button class="button">View More</button>
             </div>
           </div>
-          <!-- Continue with all original result cards... -->
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="athrwa.jpg" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Athrva Nandapurkar</h2>
+              <p class="description">AIR 3 </p>
+              <p class="description">IIT Mumbai</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="Picture4.png" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Anas Ali</h2>
+              <p class="description">NEET 659 out of 720</p>
+              <p class="description">KEM-Mumbai</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="UTKARSH ZAWAR - Copy.JPG" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Utkarsh Zawar</h2>
+              <p class="description">NEET 677 out of 720.</p>
+              <p class="description">AIIMS-Jaitapur.</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="unnamed.png" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Ruchita Kulkarni</h2>
+              <p class="description">NEET 619 out of 720.</p>
+              <p class="description">Goverment Medical College.</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="aas.png" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Shraddha Darbeshwar</h2>
+              <p class="description">NEET 620 out of 720.</p>
+              <p class="description">Goverment Medical College.</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="35 Shreejeet Golhait.jpg" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Shreejeet Golhait</h2>
+              <p class="description">AIR 35 IN IIT.</p>
+              <p class="description">IIT Delhi</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="Rishikesh.jpg" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">Rishikesh Banker</h2>
+              <p class="description">AIR 97 IN IIT.</p>
+              <p class="description">IIT- Mumbai.</p>
+              <button class="button">View More</button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="swiper-button-next swiper-navBtn"></div>
@@ -788,20 +666,162 @@
     </div>
   </section>
 
-  <!-- ================= MEDIA COVERAGE, GALLERY, CONTACT (keeping original) ================= -->
-  <!-- All other sections remain exactly the same as original -->
+  <!-- ================= MEDIA COVERAGE ================= -->
+  <section class="Media">
+    <h1>Gurukul classes&nbsp;<span class="cs-text">In Media Coverage</span></h1>
+    <div class="row">
+      <div class="Media-col"><img src="WhatsApp Image 2025-01-20 at 12.20.24_36282dc5.jpg"><div class="layer"></div></div>
+      <div class="Media-col"><img src="WhatsApp Image 2025-01-20 at 12.20.24_aac5efd8.jpg"><div class="layer"></div></div>
+      <div class="Media-col"><img src="WhatsApp Image 2025-01-20 at 12.20.25_f57bf8c9.jpg"><div class="layer"></div></div>
+      <div class="Media-col"><img src="WhatsApp Image 2025-01-20 at 12.20.26_a77ec8e1.jpg"><div class="layer"></div></div>
+      <div class="Media-col"><img src="WhatsApp Image 2025-01-20 at 12.20.26_4a0f0d5a.jpg"><div class="layer"></div></div>
+      <div class="Media-col"><img src="marathi copywriting.jpg"><div class="layer"></div></div>
+    </div>
+  </section>
 
-  <!-- ================= ENHANCED WHATSAPP FLOATING BUTTON ================= -->
-  <a href="https://wa.me/918668689849?text=Hi%20Gurukul%20Classes%2C%20I%20want%20to%20know%20more%20about%20your%20courses" 
-     class="whatsapp-float" 
-     target="_blank" 
-     rel="noopener noreferrer"
-     aria-label="Chat with Gurukul Classes on WhatsApp">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-    </svg>
-    <span class="whatsapp-label">Chat Now</span>
-  </a>
+  <!-- ================= GALLERY ================= -->
+  <section class="Gallery">
+    <h1>Gurukul classes&nbsp;<span class="cs-text">Gallery</span></h1>
+    <div class="row">
+      <div class="Media-col-lo"><img src="IMG_6202 copy.JPG"><div class="layer"></div></div>
+      <div class="Media-col-lo"><img src="IMG_4553.JPG"><div class="layer"></div></div>
+      <div class="Media-col-lo"><img src="IMG_4560.JPG"><div class="layer"></div></div>
+      <div class="Media-col-lo"><img src="Jee-Adv. Group photo-2015.jpg"><div class="layer"></div></div>
+      <div class="Media-col-lo"><img src="DSC_0062.JPG"><div class="layer"></div></div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT / INFORMATION ================= -->
+  <section class="Information">
+    <h1>Our Classes</h1>
+  </section>
+
+  <div class="information-back">
+    <div class="contact_us_6">
+      <div class="responsive-container-block container">
+        <style>
+          .input, .textinput {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          }
+          .submit-btn {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+          .submit-btn:hover {
+            background-color: #218838;
+          }
+          .response-message {
+            margin-top: 10px;
+          }
+        </style>
+
+        <form id="contact-form">
+          <div class="container-block form-wrapper">
+            <div class="mob-text">
+              <p class="text-blk contactus-head">Get in Touch</p>
+              <p class="text-blk contactus-subhead"></p>
+            </div>
+            <div class="responsive-container-block" id="i2cbk">
+              <div class="responsive-cell-block" id="i10mt-3">
+                <p class="text-blk input-title">FIRST NAME</p>
+                <input class="input" id="ijowk-3" name="FirstName" placeholder="Please enter first name..." required>
+              </div>
+              <div class="responsive-cell-block" id="ip1yp">
+                <p class="text-blk input-title">EMAIL</p>
+                <input class="input" id="ipmgh-3" name="Email" placeholder="Please enter email..." required type="email">
+              </div>
+              <div class="responsive-cell-block" id="ih9wi">
+                <p class="text-blk input-title">PHONE NUMBER</p>
+                <input class="input" id="imgis-3" name="PhoneNumber" placeholder="Please enter phone number..." required type="tel">
+              </div>
+              <div class="responsive-cell-block" id="i634i-3">
+                <p class="text-blk input-title">WHAT DO YOU HAVE IN MIND?</p>
+                <textarea class="textinput" id="i5vyy-3" name="Message" placeholder="Please enter query..." required></textarea>
+              </div>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+          </div>
+        </form>
+        <div id="response-message" class="response-message"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= WHATSAPP FLOATING BUTTON ================= -->
+<!-- Official WhatsApp Floating Button -->
+<a href="https://wa.me/918668689849"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+    alt="WhatsApp Chat">
+</a>
+  <!-- ================= WHATSAPP FLOATING BUTTON CSS ================= -->
+  <style>
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 10000;
+      animation: whatsapp-bounce 2s infinite;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+      transform: scale(1.1);
+      box-shadow: 2px 2px 10px #999;
+    }
+
+    .whatsapp-icon {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    @keyframes whatsapp-bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 480px) {
+      .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 28px;
+      }
+    }
+  </style>
 
   <!-- ================= FOOTER ================= -->
   <footer>
@@ -840,45 +860,17 @@
     </div>
   </footer>
 
-  <!-- ================= ENHANCED SCRIPTS ================= -->
+  <!-- ================= SCRIPTS ================= -->
+
+  <!-- Nav menu script -->
   <script>
-    // ================= ENHANCED POPUP FUNCTIONALITY =================
-    function showGurukulPopup() {
-      document.getElementById("gurukul-popup-overlay").classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeGurukulPopup() {
-      document.getElementById("gurukul-popup-overlay").classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    // Close on overlay click
-    document.getElementById("gurukul-popup-overlay").addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeGurukulPopup();
-      }
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeGurukulPopup();
-      }
-    });
-
-    // Auto-show popup after 2 seconds (only on first visit)
-    if (!sessionStorage.getItem('popupShown')) {
-      setTimeout(showGurukulPopup, 2000);
-      sessionStorage.setItem('popupShown', 'true');
-    }
-
-    // ================= ORIGINAL SCRIPTS =================
     let navLinks = document.getElementById("navLinks");
     function showMenu() { navLinks.style.right = "0"; }
     function hideMenu() { navLinks.style.right = "-250px"; }
+  </script>
 
-    // Slideshow script
+  <!-- Slideshow script -->
+  <script>
     let slideIndex = 0;
     function showSlides() {
       const slides = document.getElementsByClassName("mySlides");
@@ -904,6 +896,19 @@
     setInterval(showSlides, 2000);
   </script>
 
+  <!-- Popup script -->
+  <script>
+    function showGurukulPopup() {
+      document.getElementById("gurukul-popup-overlay").style.display = "flex";
+    }
+    function closeGurukulPopup() {
+      document.getElementById("gurukul-popup-overlay").style.display = "none";
+    }
+    window.addEventListener('load', function () {
+      setTimeout(showGurukulPopup, 1000);
+    });
+  </script>
+
   <!-- jQuery & Owl Carousel -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -925,6 +930,34 @@
 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Your Swiper init in DION.js -->
   <script src="DION.js"></script>
+
+  <!-- Contact form submit -->
+  <script>
+    document.getElementById('contact-form')?.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(this);
+      const data = {};
+      formData.forEach((value, key) => { data[key] = value; });
+
+      fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' }
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('response-message').innerText = 'Your message has been sent successfully!';
+        document.getElementById('contact-form').reset();
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        document.getElementById('response-message').innerText = 'There was an error sending your message.';
+      });
+    });
+  </script>
 </body>
 </html>
+
+get responsive whatapp button to all devices and get pop ub bot button in website
